@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeSS - Conference</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+        .bg-primary {
+            background-color: #285fa7;
+            /* blue background color */
+        }
+
+        .text-primary {
+            color: #2835a7;
+            /* blue text color */
+        }
+
+        .hover\:text-primary:hover {
+            color: #2855a7;
+            /* blue on hover */
+        }
+
+        .counter-section {
+            background: linear-gradient(135deg, #2850a7, #00a4e5);
+            /* blue gradient */
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #timer div {
+            display: inline-block;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        #timer span {
+            display: block;
+            font-size: 2rem;
+        }
+    </style>
+
+    <style>
+        /* Sizing and positioning for the timeline */
+        .timeline-container {
+            display: flex;
+            gap: 3rem;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .timeline-item {
+            width: 250px;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #0a9caf;
+            border-radius: 10px;
+            color: white;
+            position: relative;
+            scroll-snap-align: start;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 3px solid #0aaf73;
+            border-radius: 50%;
+        }
+
+        .timeline-line {
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            background-color: white;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="bg-white-100 text-gray-900">
+    <nav class="bg-white fixed top-0 w-full shadow-md z-50">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="ness.org.np" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="images/logo.png" class="h-8" alt="NeSS Logo" />
+                <span class="self-center text-2xl font-bold text-blue-600 flex items-center whitespace-nowrap">
+                    <!-- Full title for medium (md) and larger screens -->
+                    <span class="hidden md:inline">Nepal Statistical Society</span>
+                    <!-- Abbreviation for small (sm) screens -->
+                    <span class="inline md:hidden">NeSS</span>
+                </span>                
+                
+
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li><a href="index"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                    </li>
+                    <li><a href="Activities"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Activities</a>
+                    </li>
+                    <li><a href="Conference"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Conference</a>
+                    </li>
+                    <li><a href="members"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Members</a>
+                    </li>
+                    <li><a href="trainings"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Training Programs</a></li>
+                    <li><a href="contact"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Contents -->
+<!-- Conference Section -->
+    <!-- Executive Board -->
+<section class="container mx-auto px-2 py-2 p-2">
+
+    <div class="relative w-full h-full sm:h-screen bg-cover bg-center" style="background-image: url('images/back.jpg');">
+        <div class="absolute inset-0" style="background-color: rgba(255, 255, 255, 0.5);"></div>
+    <div class="container mx-auto px-4 py-12 pt-2 mt-8 bg-white relative z-10"></div>
+    <h1 class="text-4xl font-bold text-center mb-8 text-blue-600 bg-white relative z-10">National Conference on Emerging Trends and Applications in Statistics and Data Science - 2025 (NCETASD - 2025)</h1> <!-- Updated header -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-black-600 text-center pt-2 pt-5 text-2xl font-bold">    
+            <p>29-30 May, 2025 (Jestha 15-16, 2082)</p>
+            <p>Venue: Orchid International College, Gausala, Kathmandu</p>
+        </div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-black-100 text-center p-4 pt-10">
+           
+            <div class="flex flex-wrap justify-center gap-4 w-full max-w-xl mt-4 pt-2 pb-4">
+                <a href="images/ness.jpg" target="_blank"
+                class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto">
+                    Brochure
+                </a>
+                <a href="doc/Abstract Book.pdf" 
+                   class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto">
+                    Abstract Book
+                </a>
+                <a href="https://forms.gle/mvXBCbufirWyKeRBA" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full sm:w-auto">
+                   Register
+                </a>
+            </div>
+    
+            <!-- Timer Section -->
+            <div class="mt-8 bg-opacity-50 rounded-lg p-2">
+                <h2 class="text-xl sm:text-2xl font-semibold mb-4">NCETASD - 2025 Conference Countdown</h2>
+                <div id="timer" class="flex flex-wrap justify-center space-x-4 text-lg font-bold">
+                    <div class="text-center">
+                        <span id="days" class="block text-2xl sm:text-3xl">0</span>
+                        <span>Days</span>
+                    </div>
+                    <div class="text-center">
+                        <span id="hours" class="block text-2xl sm:text-3xl">0</span>
+                        <span>Hours</span>
+                    </div>
+                    <div class="text-center">
+                        <span id="minutes" class="block text-2xl sm:text-3xl ">0</span>
+                        <span>Minutes</span>
+                    </div>
+                    <div class="text-center">
+                        <span id="seconds" class="block text-2xl sm:text-3xl ">0</span>
+                        <span>Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    
+    
+    
+    
+    <!-- Conference Theme -->
+    <div class="mb-12">
+        <h2 class="text-2xl font-bold text-primary mb-4 pt-6">Call for papers</h2>
+        <p class="text-gray-700">
+            Nepal Statistical Society is pleased to invite Academicians, Researchers, Data Scientists, Statisticians, Professionals, and Students to NCETASD-2025, which is taking place on May 29-30, 2025 (15-16 Jestha, 2082). This conference brings us together to explore the latest advancements in Statistics and Data Science, providing a valuable platform to present research, share knowledge, and engage with thought leaders shaping the future of these fields.
+
+Join us for insightful keynote addresses, panel discussions, technical sessions, and networking opportunities on contemporary themes such as public health, finance, AI, machine learning, environmental analytics, governance, and more.
+        </p>
+        <p class="text-gray-700">
+            The theme for this year's conference is <strong>Application of Statistics and Data Science</strong>. </p>
+    <!-- Organizer detail -->               
+    <div class="section-header">
+        <h1 class="text-2xl font-bold text-primary pt-10">Host Organization: Orchid International College</h1>
+        <p class="text-gray-700"><a href ="https://oic.edu.np"><b>Orchid International College</b></a>
+            located at Bijay Chowk Gaushala, Kathmandu, Nepal, is a reputed institution offering undergraduate and graduate programs in IT, management, and business studies, fostering academic excellence and professional growth. 
+        </p>
+    </div>
+
+    </div>
+    <!-- Conference Date -->
+    <div class="mb-12 pt-10">
+        <h2 class="text-2xl font-bold text-primary mb-4">Conference Date</h2>
+        <table class="table-auto border-collapse border border-gray-300 w-full text-gray-700">
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2">Event</th>
+                    <th class="border border-gray-300 px-4 py-2">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Last date for abstract submission</td>
+                    <td class="border border-gray-300 px-4 py-2">2<sup>nd</sup> May, 2025</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Acceptance Notification</td>
+                    <td class="border border-gray-300 px-4 py-2">10<sup>th</sup> May, 2025</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Slide / Full paper Submission</td>
+                    <td class="border border-gray-300 px-4 py-2">20<sup>th</sup> May, 2025</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Early Bird Registration Ends</td>
+                    <td class="border border-gray-300 px-4 py-2">25<sup>th</sup> April, 2025</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Conference Day</td>
+                    <td class="border border-gray-300 px-4 py-2">29-30<sup></sup> May, 2025</td>
+                </tr>
+            </tbody>
+        </table>      
+    </div>
+    <div class="container mx-auto pt-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Sub Themes -->
+            <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:bg-green-500 hover:text-gray-700">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Sub Themes</h2>
+                <ul class="list-disc list-inside">
+                    <li>Public Health, Biostatistics, and Epidemiology</li>
+                    <li>Advances in Statistical and Computational Methodologies</li>
+                    <li>AI, Machine Learning and Data Science Innovations</li>
+                    <li>Climate Change and Environmental Statistics</li>
+                    <li>Economics, Finance, Business Analytics</li>
+                    <li>Agriculture, Food Security, and Sustainable Development</li>
+                    <li>Education, Digital Learning, and Human Resource Analytics</li>
+                    <li>Governance, Policy, and Official Statistics</li>
+                    <li>Interdisciplinary Applications of Statistics and Data Science</li>
+                </ul>
+            </div>
+    
+            <!-- Conference Objectives -->
+            <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:bg-green-500 hover:text-gray-700">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Conference Objectives</h2>
+                <ul class="list-disc list-inside">
+                    <li>Explore Advancements in Statistics and Data Science</li>  
+                    <li>Facilitate Knowledge Sharing and Collaboration</li>  
+                    <li>Address Contemporary Challenges</li>  
+                    <li>Promote Professional Networking and Development</li>  
+                    <li>Encourage Policy and Decision-Making Based on Data</li> 
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+<!-- Conference Speakers -->
+<div class="mb-12 pt-10">
+    <h2 class="text-2xl font-bold text-primary mb-4">Conference Speakers</h2>
+    <img src="images/bro1.jpg" alt="NCETASD 2025 Brochure">
+
+
+
+
+
+
+    <!-- sub -->
+    <div class="mb-12 pt-10">
+        <h2 class="text-2xl font-bold text-primary mb-4">Committees for the NCETASD-2025</h2>
+    
+   
+Conference Organizing Committee consists of all the executive members of Nepal Statistical
+Society and the administrative authority of Orchid International College.
+    <div class="container mx-auto pt-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Sub Themes -->
+            <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:bg-green-500 hover:text-gray-700">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Steering Committee: (सम्मेलन संचालन समिति)</h2>
+                <ul class="list-disc list-inside">
+                    <li>Prof. Dr. Ram Prasad Khatiwada</li>
+                    <li>Dr. Bijay Lal Pradhan</li>
+                    <li>Mr. Bidur Dahal</li>
+                    <li>Mr. Nabaraj Poudyal</li>
+                    <li>Mr. Eakraj Kadariya</li>
+                    <li>Mr. Shital Bhandary</li>
+                    <li>Ms. Namrata Gautam</li>
+                    <li>Mr. Anil Aryal</li>
+                    <li>Mr. Dolendra Subedi</li>
+                </ul>
+            </div>
+    
+            <!-- Conference Objectives -->
+            <div class="bg-white p-8 rounded-lg shadow-lg transition duration-300 hover:bg-green-500 hover:text-gray-700">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Scientific Committee (वैज्ञानिक समिति)</h2>
+                <ul class="list-disc list-inside">
+                    <li>Prof. Dr. Amod Kumar Poudyal</li>
+                    <li>Prof. Dr. Amita Pradhan</li>
+                    <li>Dr. Bijay Lal Pradhan</li>
+                    <li>Dr. Binod Shah</li>
+                    <li>Mr. Nagendra B Amatya</li>
+                    <li>Mr. Shital Bhandary</li>
+                    <li>Mr. Hari Prasad Upadhyay</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!-- Conference Fees -->
+    <div class="mb-12 pt-10">
+        <h2 class="text-2xl font-bold text-primary mb-4">Conference Fees</h2>
+        <table class="table-auto border-collapse border border-gray-300 w-full text-gray-700">
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2">Category</th>
+                    <th class="border border-gray-300 px-4 py-2">Regular <br> (3<sup>rd</sup>May - 20<sup>th</sup> May, 2025 )</th>
+                    <th class="border border-gray-300 px-4 py-2">Onsite <br> (29<sup>th</sup> May, 2025 )</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Students</td>
+                    <td class="border border-gray-300 px-4 py-2">NRS 2000</td>
+                    <td class="border border-gray-300 px-4 py-2">NRS 2500</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Faculty/ Researchers</td>
+                    <td class="border border-gray-300 px-4 py-2">NRS 3000</td>
+                    <td class="border border-gray-300 px-4 py-2">NRS 3500</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">Industry Professionals</td>
+                    <td class="border border-gray-300 px-4 py-2">NRS 6000</td>
+                    <td class="border border-gray-300 px-4 py-2">NRS 7000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2">International Participants</td>
+                    <td class="border border-gray-300 px-4 py-2">USD 70</td>
+                    <td class="border border-gray-300 px-4 py-2">USD 80</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="text-gray-700 mt-2">*Registration covers conference materials, breakfast, tea snacks, and lunch.</p>
+        <p class="text-gray-700 mt-2">*We encourage all interestd participants to submit abstract and register early to secure their participation in this prestigious event.</p>
+    </div>
+
+
+
+      <div class="section">
+        <div class="partner-wrapper">
+          
+          <!-- Partners -->
+          <div class="partner-section">
+            <h2 class="section-title">Supported By:</h2>
+            <div class="logo-container">
+              <div class="logo-box">
+                <a href="https://ku.edu.np" target="_blank">
+                  <img src="images/ku1.png" alt="Partner Logo 1">
+                </a>
+              </div>
+            <div class="logo-box">
+                <a href="https://ntc.net.np" target="_blank">
+                  <img src="images/ntc.jpeg" alt="Partner Logo 1">
+                </a>
+            </div>
+            <div class="logo-box">
+                <a href="https://#" target="_blank">
+                  <img src="images/steam.jpg" alt="Partner Logo 1">
+                </a>
+            </div>
+            <div class="logo-box">
+                <a href="https://mbshnepal.com/" target="_blank">
+                  <img src="images/mbsh.jpg" alt="Partner Logo 1">
+                </a>
+            </div>
+            </div>
+          </div>
+      
+          <!-- Media Partners -->
+          <div class="partner-section">
+            <h2 class="section-title">Media Partners:</h2>
+            <div class="logo-container">
+              <div class="logo-box">
+                <a href="https://gyankhabar.com" target="_blank">
+                  <img src="images/gyankhabar.png" alt="Media Partner Logo 1">
+                </a>
+              </div>
+              <div class="logo-box">
+                <a href="https://www.gothalokhabar.com/" target="_blank">
+                  <img src="images/gothalo.jpg" alt="Media Partner Logo 2">
+                </a>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+
+
+<!-- Footer -->
+    <footer class="bg-primary py-6">
+        <div class="container mx-auto px-4 text-center text-white">
+            <p>&copy; 2024 NeSS. All rights reserved. &nbsp; &nbsp; &nbsp;&nbsp;Design: <a
+                    href="https://ambirapradhan.com.np">Ambira Pradhan</a></p>
+        </div>
+    </footer>
+    <!-- Flowbite and other JS dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <script>
+        // Countdown Timer Script
+        const countdown = () => {
+            const conferenceDate = new Date("May 29, 2025 08:00:00").getTime(); // Update the date to match the event
+            const now = new Date().getTime();
+            const difference = conferenceDate - now;
+    
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+    
+            if (difference < 0) {
+                document.getElementById("countdown").innerHTML = "Event has started!";
+            }
+        };
+    
+        setInterval(countdown, 1000);
+    </script>
+    
+    <script>
+        const timeline = document.getElementById('timeline');
+        const leftArrow = document.getElementById('left-arrow');
+        const rightArrow = document.getElementById('right-arrow');
+        const itemWidth = 250; // Width of the timeline item
+    
+        // Move timeline right
+        rightArrow.addEventListener('click', () => {
+            const maxScrollLeft = timeline.scrollWidth - timeline.clientWidth;
+            if (timeline.scrollLeft < maxScrollLeft) {
+                timeline.scrollLeft += itemWidth;
+            }
+        });
+    
+        // Move timeline left
+        leftArrow.addEventListener('click', () => {
+            if (timeline.scrollLeft > 0) {
+                timeline.scrollLeft -= itemWidth;
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+
+<style>
+    .logo-container {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+  
+      .logo-box {
+        width: 120px;
+        height: 120px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      .logo-box img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .partner-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.partner-section {
+  flex: 1;
+  min-width: 250px; /* Prevents shrinking too small on small screens */
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1d4ed8; /* Adjust color as needed */
+  margin-bottom: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-box img {
+  max-height: 60px;
+  object-fit: contain;
+}
+    </style>
+    </body>
+    </html>

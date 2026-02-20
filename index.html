@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeSS - Home</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+        .bg-primary {
+            background-color: #285fa7;
+            /* blue background color */
+        }
+
+        .text-primary {
+            color: #2835a7;
+            /* blue text color */
+        }
+
+        .hover\:text-primary:hover {
+            color: #2855a7;
+            /* blue on hover */
+        }
+
+        .counter-section {
+            background: linear-gradient(135deg, #2850a7, #00a4e5);
+            /* blue gradient */
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #timer div {
+            display: inline-block;
+            margin: 0 15px;
+            text-align: center;
+        }
+
+        #timer span {
+            display: block;
+            font-size: 2rem;
+        }
+    </style>
+
+    <style>
+        /* Sizing and positioning for the timeline */
+        .timeline-container {
+            display: flex;
+            gap: 3rem;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .timeline-item {
+            width: 250px;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #0a9caf;
+            border-radius: 10px;
+            color: white;
+            position: relative;
+            scroll-snap-align: start;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 3px solid #0aaf73;
+            border-radius: 50%;
+        }
+
+        .timeline-line {
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            background-color: white;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body class="bg-white-100 text-gray-900">
+    <nav class="bg-white fixed top-0 w-full shadow-md z-50">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="orsn.org.np" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="images/logo.png" class="h-8" alt="NeSS Logo" />
+                <span class="self-center text-2xl font-bold text-blue-600 flex items-center whitespace-nowrap">
+                    <!-- Full title for medium (md) and larger screens -->
+                    <span class="hidden md:inline">Nepal Statistical Society</span>
+                    <!-- Abbreviation for small (sm) screens -->
+                    <span class="inline md:hidden">NeSS</span>
+                </span>                
+                
+
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li><a href="index"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                    </li>
+                    <li><a href="activities"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Activities</a>
+                    </li>
+                    <li><a href="conference"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Conference</a>
+                    </li>
+                    <li><a href="members"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Members</a>
+                    </li>
+                    <li><a href="trainings"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Training Programs</a></li>
+                    <li><a href="contact"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Slider Section -->
+    <div id="animation-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-linear" data-carousel-item>
+                <img src="images/ness1.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <div class="absolute bottom-5 left-5 bg-black/50 text-white px-4 py-2 rounded-lg">
+                        <h3 class="text-xl font-bold">AGM, 2081</h3>
+                        <p>Central Department of Statistics</p>
+                    </div>
+                    
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-linear" data-carousel-item>
+                <img src="images/ness2.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <div class="absolute bottom-5 left-5 bg-black/50 text-white px-4 py-2 rounded-lg">
+                        <h3 class="text-xl font-bold">Talk Program</h3>
+                        <p>Big Data and Official Statistics for SDG Monitoring</p>
+                    </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-linear" data-carousel-item>
+                <img src="images/ness3.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    <div class="absolute bottom-5 left-5 bg-black/50 text-white px-4 py-2 rounded-lg">
+                        <h3 class="text-xl font-bold">Online R Training</h3>
+                        <p>Joinly organized by Ness and ANMA</p>
+                    </div>
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-linear" data-carousel-item>
+                <img src="images/ness4.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-linear" data-carousel-item>
+                <img src="images/ness5.jpg"
+                    class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            </div>
+        </div>
+        <!-- Slider controls -->
+        <button type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
+            <span
+                class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M5 1 1 5l4 4" />
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
+            <span
+                class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 9 4-4-4-4" />
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
+
+
+
+
+    <!-- About Section -->
+    <section class="container mx-auto px-4 py-12 bg-white"> <!-- Changed py-16 to py-12 -->
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-primary mb-4">About Nepal Statistical Society</h2>
+                <p class="text-gray-700 mb-6"> The Nepal Statistical Society (NeSS) was established on November 14, 2013, 
+                    during a meeting held at the Central Department of Statistics, Tribhuvan University, in response to the diverse 
+                    challenges arising from contemporary circumstances. Recognizing the need for statisticians to play a significant 
+                    role in addressing these issues, the professors of statistics decided to form a professional and subject-specific 
+                    collective organization. Following various meetings and discussions, the society was officially registered with 
+                    the District Administration Office in Kathmandu on November 15, 2014, and with the Social Welfare Council on 
+                    December 12, 2014.
+<br>
+<br>
+                    The society's constitution emphasizes the following objectives: 
+                <ul>
+                    <li>To enhance the academic advancement and protection of the rights and interests of professors involved in teaching and research in statistics across various universities and campuses in Nepal.</li>
+                    <li>To identify and promote various fields of application for statistics.</li>
+                    <li>To improve the competencies of professors based on the breadth of the subject.</li>
+                    <li>To contribute significantly to the progressive development of the field of statistics.</li>
+                </ul>
+<br>                    
+                    NeSS is dedicated to fostering a culture of statistical literacy and excellence through a variety of initiatives, 
+                    including seminars, workshops, and conferences that facilitate knowledge sharing and collaboration among professionals 
+                    in the field. The society also emphasizes the importance of networking, providing opportunities for members to connect 
+                    with statistical experts both locally and internationally.
+<br>                    
+                    Supported by membership fees, contributions, and sponsorships, NeSS operates as a not-for-profit organization dedicated 
+                    to advancing the field of statistics in Nepal. Through its efforts, NeSS aims to optimize data-driven decision-making 
+                    and resource management, ultimately contributing to the development of evidence-based policies and practices in 
+                    various sectors.
+                </p>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="" alt="" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Board -->
+    <section id="executive-board" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Executive Members (2024-2026)</h2> <!-- Updated header -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- President -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/ram.jpg" alt="Ram Prasd Khatiwada" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Prof. Dr. Ram Prasad Khatiwada</h3>
+                    <p class="text-gray-600 dark:text-gray-400">President</p>
+                </div>
+                <!-- Vice President -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/bijay.jpg" alt="Bijay Lal Pradhan" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Dr. Bijay Lal Pradhan</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Vice President</p>
+                </div>
+                <!-- General Secretary -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/Nabaraj.jpg" alt="Nabaraj Poudyal" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white"><a
+                            href="https://bijaylalpradhan.com.np">Nabaraj Poudyal</a></h3>
+                    <p class="text-gray-600 dark:text-gray-400">General Secretary</p>
+                </div>
+                <!-- Secretary -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/gopal.jpg" alt="Gopal Prasad Shyedai" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Gopal Prasad Shedai</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Secretary</p>
+                </div>
+                <!-- Treasurer -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/ek.jpg" alt="Ek Raj Kadaria"
+                        class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Ek Raj Kadaria </h3>
+                    <p class="text-gray-600 dark:text-gray-400">Treasurer</p>
+                </div>
+                <!-- Member 10 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/amod.jpg" alt="Amod Kumar Paudel" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Prof. Dr. Amod Kumar Poudyal </h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 1 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/amita.jpg" alt="Amita Pradhan" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Prof. Dr. Amita Pradhan</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 2 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/krishna.jpg" alt="Krishan Prasad Acharya"
+                        class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Dr. Krishna Prasad Acharya</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 3 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/shova.jpg" alt="Shova Nani Shakya" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Shova Nani Shakya</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 4 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/rajendra.jpg" alt="Rajendra Prasad Upadhyay" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Rajendra Prasad Upadhyay</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 5 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/binod.jpg" alt="Binod Saha" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Binod Sah</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 6 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/Nanda.jpg" alt="Nanda Tharu" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Nanda Kumar Tharu</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 7 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/kishor.jpg" alt="Kishor Khanal" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Kishor Khanal</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 8 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/shital.jpg" alt="Shital Bhandary" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Shital Bhandary</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+                <!-- Member 9 -->
+                <div
+                    class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+                    <img src="images/januka.jpg" alt="Januka Neupane" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Januka Neupane</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Member</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-primary py-6">
+        <div class="container mx-auto px-4 text-center text-white">
+            <p>&copy; 2024 NeSS. All rights reserved. &nbsp; &nbsp; &nbsp;&nbsp;Design: <a
+                    href="https://ambirapradhan.com.np">Ambira Pradhan</a></p>
+        </div>
+    </footer>
+
+    <!-- Flowbite and other JS dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script>
+        // Countdown Timer Script
+        const countdown = () => {
+            const conferenceDate = new Date("February 1, 2025 08:00:00").getTime(); // Update the date to match the event
+            const now = new Date().getTime();
+            const difference = conferenceDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            if (difference < 0) {
+                document.getElementById("countdown").innerHTML = "Event has started!";
+            }
+        };
+
+        setInterval(countdown, 1000);
+    </script>
+
+    <script>
+        const timeline = document.getElementById('timeline');
+        const leftArrow = document.getElementById('left-arrow');
+        const rightArrow = document.getElementById('right-arrow');
+        const itemWidth = 250; // Width of the timeline item
+
+        // Move timeline right
+        rightArrow.addEventListener('click', () => {
+            const maxScrollLeft = timeline.scrollWidth - timeline.clientWidth;
+            if (timeline.scrollLeft < maxScrollLeft) {
+                timeline.scrollLeft += itemWidth;
+            }
+        });
+
+        // Move timeline left
+        leftArrow.addEventListener('click', () => {
+            if (timeline.scrollLeft > 0) {
+                timeline.scrollLeft -= itemWidth;
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
