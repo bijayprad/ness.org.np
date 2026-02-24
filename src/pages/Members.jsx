@@ -9,7 +9,7 @@ import krishna from "../assets/pics/krishna.jpg";
 import shova from "../assets/pics/shova.jpg";
 import rajendra from "../assets/pics/rajendra.jpg";
 import binod from "../assets/pics/binod.jpg";
-import nanda from "../assets/pics/nanda.jpg";
+import nanda from "../assets/pics/Nanda.jpg";
 import kishore from "../assets/pics/kishor.jpg";
 import shital from "../assets/pics/shital.jpg";
 import januka from "../assets/pics/januka.jpg";
