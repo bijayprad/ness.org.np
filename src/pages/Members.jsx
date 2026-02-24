@@ -174,7 +174,8 @@ const generalMembers = [
   { name: "Prof. Dr. Vikash Raj Satyal", email: "vrsatyal@gmail.com", mobile: "9841413453", affiliation: "Amrit Campus, Lainchaur (Retired)" },
   { name: "Prof. Yajna Prasad Timilsina", email: "yajna.timilsina@pc.tu.edu.np", mobile: "9856070234", affiliation: "Forestry Campus, Pokhara" },
   { name: "Mr. Yogesh Man Shrestha", email: "yogeshmans@yahoo.com", mobile: "9841432195", affiliation: "Trichandra Campus, Ghantaghar" },
-  { name: "Mr. Yogesh Prasad Shrestha", email: "yogeshprasadshrestha@gmail.com", mobile: "9841456789", affiliation: "Saraswati Multiple Campus, Thamel" } 
+  { name: "Bijay Lal Pradhan"}
+];
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-4">
