@@ -40,7 +40,7 @@ export default function Conference() {
           </h1>
 
           <p className="text-xl font-semibold">
-            20-21 August, 2026 (Aswin 5-6, 2083)
+            20-21 September, 2026 (Aswin 5-6, 2083)
           </p>
           <p className="mb-6">
             Venue: Kathmandu University, Dhulikhel, Kathmandu

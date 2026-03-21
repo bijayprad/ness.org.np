@@ -7,8 +7,9 @@ export default function Reviewcommittee() {
         They oversee the quality, integrity, and academic rigor of all journal publications.
       </p>
       <ul className="list-disc ml-6">
-<li>Associate Prof. Dr. Bijay Lal Pradhan – Associate Professor, Tribhuvan University</li>
-<li>Dr. Ram Prasad Khatiwada – Professor, Tribhuvan University</li>
+<li>Prof. Dr. Bijay Lal Pradhan – Tribhuvan University</li>
+<li>Prof. Dr. Ram Prasad Khatiwada – Tribhuvan University</li>
+<li>Prof. Dr. Vikash Raj Satyal – Tribhuvan University</li>
 <li>Dr. Ananta Raj Dhungana – Pokhara University</li>
 <li>Dr. Niranjan Shrestha  – Pokhara University</li>
 <li>Dr. Shyam Kishore Mahato – Professor, Rajarshi Janak University</li>

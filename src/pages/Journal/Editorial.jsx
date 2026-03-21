@@ -7,12 +7,13 @@ export default function Editorial() {
         They oversee the quality, integrity, and academic rigor of all journal publications.
       </p>
       <ul className="list-disc ml-6">
-        <li>Associate Prof. Dr. Bijay Lal Pradhan – Chief Editor</li>
+<li>Prof. Dr. Bijay Lal Pradhan – Chief Editor</li>
 <li>Prof. Dr. Ram Prasad Khatiwada – Editor</li>
+<li>Prof. Dr. Vikash Raj Satyal – Editor</li>
 <li>Prof. Dr. Gauri Shrestha  – Editor</li>
 <li>Prof. Dr. Rabindra Prasad Kayastha  – Editor</li>
 <li>Prof. Dr. Jyoti U. Devkota  – Editor</li>
-<li> Dr. Niranjan Shrestha – Editor</li>
+<li>Prof. Dr. Niranjan Shrestha – Editor</li>
 
       </ul>
       <p className="mt-4">
