@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import wrcImage from "../assets/pics/wrc1.jpg";
 
 export default function Conference() {
   const targetDate = new Date("September 20, 2026 07:00:00").getTime();
@@ -28,9 +29,32 @@ export default function Conference() {
   }, []);
 
   return (
-    <div>
+
+
+
+  <div>
+
+    {/* WRC Banner */}
+    <div className="w-full">
+      <a
+        href="https://worldresearchconference.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src={wrcImage}
+          alt="World Research Conference"
+          className="w-full h-auto object-cover"
+        />
+      </a>
+    </div>
+
+
+
 
       {/* HERO SECTION */}
+      
+
       <section className="text-center pt-6 pb-6">
 
         <div>
