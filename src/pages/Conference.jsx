@@ -228,8 +228,8 @@ export default function Conference() {
                 <thead className="bg-blue-100">
                   <tr>
                     <th className="p-3 border">Category</th>
-                    <th className="p-3 border">Early Bird</th>
-                    <th className="p-3 border">Regular</th>
+                    <th className="p-3 border">Early Bird (upto20<sup>th</sup> August, 2026)</th>
+                    <th className="p-3 border">Regular (21<sup>st</sup> Aug - 19<sup>th</sup> Sept, 2026)</th>
                     <th className="p-3 border">Onsite</th>
                   </tr>
                 </thead>
