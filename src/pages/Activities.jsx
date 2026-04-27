@@ -64,7 +64,7 @@ className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:b
 <br></br>
 Zoom Meeting ID: 884 0050 2493. 
 <br></br>
-Passcode: 958412
+Passcode: thank you for joining meeting
 </div>
 
 
