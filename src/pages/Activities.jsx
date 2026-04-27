@@ -32,7 +32,7 @@ export default function Activities() {
             </p>
 
             <p className="text-gray-700 mb-3">
-              <strong>Date:</strong> April 25, Sunday
+              <strong>Date:</strong> April 26, Sunday
               <div className="max-w-6xl mx-auto px-10">13<sup>th</sup> Baisakh, 2083</div> 
             </p>
 
