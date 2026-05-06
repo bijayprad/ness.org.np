@@ -46,7 +46,6 @@ export default function Conference() {
           {/* CARD 1 */}
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
 
-
             <div className="p-6">
               <h2 className="text-2xl font-bold text-blue-700 mb-3">
                 World Research Conference - 2026
@@ -121,7 +120,7 @@ export default function Conference() {
           {/* BUTTONS */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             <a
-              href="/doc/brochure.pdf"
+              href="https://drive.google.com/file/d/1dfFwenWagga1D3_HzTgukouoAXH3l6Mk/preview"
               target="_blank"
               className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow"
             >
@@ -129,7 +128,7 @@ export default function Conference() {
             </a>
 
             <a
-              href="#"
+              href="https://forms.gle/k3pXo8gaBSYbj4Dy8"
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow"
             >
               Submit Abstract
@@ -236,14 +235,14 @@ export default function Conference() {
 
                 <tbody>
                   <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">Students</td>
+                    <td className="p-3 border">Nepali Students</td>
                     <td className="p-3 border">NRS 2000</td>
                     <td className="p-3 border">NRS 2500</td>
                     <td className="p-3 border">NRS 3000</td>
                   </tr>
 
                   <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">Faculty / Researchers</td>
+                    <td className="p-3 border">Nepali Faculty / Researchers</td>
                     <td className="p-3 border">NRS 3000</td>
                     <td className="p-3 border">NRS 3500</td>
                     <td className="p-3 border">NRS 4000</td>
@@ -251,12 +250,22 @@ export default function Conference() {
 
                   <tr className="odd:bg-white even:bg-gray-50">
                     <td className="p-3 border">
-                      Institutional Participants
+                      Nepali Institutional Participants
                     </td>
                     <td className="p-3 border">NRS 10000</td>
                     <td className="p-3 border">NRS 12000</td>
                     <td className="p-3 border">NRS 15000</td>
                   </tr>
+
+                  <tr className="odd:bg-white even:bg-gray-50">
+                    <td className="p-3 border">
+                      Participants from South Asia
+                    </td>
+                    <td className="p-3 border">US$ 80</td>
+                    <td className="p-3 border">US$ 120</td>
+                    <td className="p-3 border">US$ 150</td>
+                  </tr>
+
 
                   <tr className="odd:bg-white even:bg-gray-50">
                     <td className="p-3 border">Foreign Participants</td>
@@ -273,3 +282,4 @@ export default function Conference() {
     </div>
   );
 }
+
