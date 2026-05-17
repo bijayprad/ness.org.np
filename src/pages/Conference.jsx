@@ -36,76 +36,11 @@ export default function Conference() {
           Upcoming Conferences
         </h1>
 <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
-  Join researchers, statisticians, academicians, and students in two exciting international academic events.
+  Join researchers, statisticians, academicians, and students in two international academic events.
 </p>
       </section>
 
-      {/* TWO CONFERENCE CARDS */}
-      <section className="max-w-6xl mx-auto px-4 py-14">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* CARD 1 */}
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
 
-            <div className="p-6">
-              <h2 className="text-2xl font-bold text-blue-700 mb-3">
-                World Research Conference - 2026
-              </h2>
-            <p className="text-lg font-semibold mb-2">
-              International Interdisciplinary Research & Innovation Conference (IIRIC-2026)
-            </p>
-
-            <p className="mb-2">📅 19–20 May 2026
-</p>
-            <p className="mb-4">
-              📍 Orchid International College, Kathmandu, Nepal
-            </p>
-
-              <p className="text-gray-600 mb-5">
-                Explore global collaboration, innovation, and research
-                opportunities with scholars from around the world.
-              </p>
-
-              <a
-                href="https://worldresearchconference.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow"
-              >
-                Visit Website
-              </a>
-            </div>
-          </div>
-
-          {/* CARD 2 */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition duration-300">
-            <h2 className="text-2xl font-bold text-green-700 mb-4">
-              ICETASD - 2026
-            </h2>
-
-            <p className="text-lg font-semibold mb-2">
-              International Conference on Emerging Trends and Applications in
-              Statistics and Data Science
-            </p>
-
-            <p className="mb-2">📅 20-21 September, 2026</p>
-            <p className="mb-4">
-              📍 Kathmandu University, Dhulikhel, Kathmandu
-            </p>
-
-            <p className="text-gray-600 mb-5">
-              A platform for researchers, statisticians, data scientists,
-              professionals, and students to share ideas and innovations.
-            </p>
-
-            <a
-              href="#conference-details"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow"
-            >
-              View Details
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* DETAILS SECTION */}
       <section
