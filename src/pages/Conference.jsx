@@ -36,7 +36,7 @@ export default function Conference() {
           Upcoming Conference
         </h1>
 <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
-  Join researchers, statisticians, academicians, and students in the following international academic events.
+  Join researchers, statisticians, academicians, and students in the following international academic event.
 </p>
       </section>
       {/* DETAILS SECTION */}
