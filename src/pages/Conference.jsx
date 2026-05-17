@@ -262,8 +262,8 @@ export default function Conference() {
                       Participants from South Asia
                     </td>
                     <td className="p-3 border">US$ 80</td>
-                    <td className="p-3 border">US$ 120</td>
-                    <td className="p-3 border">US$ 150</td>
+                    <td className="p-3 border">US$ 100</td>
+                    <td className="p-3 border">US$ 125</td>
                   </tr>
 
 
