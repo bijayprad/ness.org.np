@@ -107,6 +107,36 @@ export default function Conference() {
               participate in ICETASD - 2026. This conference focuses on the
               application of Statistics and Data Science in modern research and
               development.
+
+              The Nepal Statistical Society (NeSS) is dedicated to fostering a culture of statistical literacy and excellence through a variety of initiatives, including seminars, workshops, and conferences that facilitate knowledge sharing and collaboration among professionals in the field. The society also emphasizes the importance of networking, providing opportunities for members to connect with statistical experts both locally and internationally. In continuation of its mission this year NeSS is going to organize An 
+International Conference on Emerging Trends and Applications in Statistics and Data Science (ICETASD-2026) which will bring together statisticians, data scientists, researchers, and professionals to explore cutting-edge developments and share insights shaping the future of the field. It offers a dynamic platform for exchanging ideas, presenting research, and engaging with experts who are driving forward data-driven solutions.
+<b>The conference will primarily focus on the following areas:</b>
+Statistics in the Context of Modern Data Science and AI
+Advances from Statistical Learning to Machine Learning
+Statistical Modeling of Environmental Risks 
+Applications in Climate Change and Sustainability
+Innovations in Health Analytics
+Computational Bayesian Methods and Emerging Trends
+Public Health and Biostatistics
+New Methodologies and Recent Progress
+GenAI: Opportunities and Challenges
+Statistical Approaches to Risk Management
+Tasks of Gen AI and Big data Challenges
+
+<b>Conference Objectives</b>
+Explore Advancements in Statistics and Data Science
+Facilitate Knowledge Sharing and Interdisciplinary Collaboration
+Address Contemporary Challenges
+Promote Professional Networking and capacity building
+Encourage evidence-based policy and decision-making
+
+Submit your abstract at: statistics.conference.nepal@gmail.com
+
+
+
+
+
+
             </p>
           </div>
 
