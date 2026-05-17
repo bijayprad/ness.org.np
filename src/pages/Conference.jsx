@@ -51,7 +51,7 @@ export default function Conference() {
           {/* BUTTONS */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             <a
-              href="https://drive.google.com/file/d/1dfFwenWagga1D3_HzTgukouoAXH3l6Mk/preview"
+              href="https://canva.link/x4hdumsrx7wkc19"
               target="_blank"
               className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow"
             >
