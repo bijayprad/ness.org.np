@@ -95,50 +95,106 @@ export default function Conference() {
             </div>
           )}
 
-          {/* CALL FOR PAPERS */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-blue-700 mb-4">
-              Call for Papers
-            </h3>
+ {/* CALL FOR PAPERS */}
+<div className="mb-12">
+  <h3 className="text-2xl font-bold text-blue-700 mb-4">
+    Call for Papers
+  </h3>
 
-            <p className="text-gray-700 leading-7">
-              Nepal Statistical Society invites academicians, researchers,
-              statisticians, data scientists, professionals, and students to
-              participate in ICETASD - 2026. This conference focuses on the
-              application of Statistics and Data Science in modern research and
-              development.
+  <div className="text-gray-700 leading-7 space-y-4">
+    <p>
+      Nepal Statistical Society invites academicians, researchers,
+      statisticians, data scientists, professionals, and students to
+      participate in ICETASD - 2026. This conference focuses on the
+      application of Statistics and Data Science in modern research and
+      development.
+    </p>
 
-              The Nepal Statistical Society (NeSS) is dedicated to fostering a culture of statistical literacy and excellence through a variety of initiatives, including seminars, workshops, and conferences that facilitate knowledge sharing and collaboration among professionals in the field. The society also emphasizes the importance of networking, providing opportunities for members to connect with statistical experts both locally and internationally. In continuation of its mission this year NeSS is going to organize An 
-International Conference on Emerging Trends and Applications in Statistics and Data Science (ICETASD-2026) which will bring together statisticians, data scientists, researchers, and professionals to explore cutting-edge developments and share insights shaping the future of the field. It offers a dynamic platform for exchanging ideas, presenting research, and engaging with experts who are driving forward data-driven solutions.
-<b>The conference will primarily focus on the following areas:</b>
-Statistics in the Context of Modern Data Science and AI
-Advances from Statistical Learning to Machine Learning
-Statistical Modeling of Environmental Risks 
-Applications in Climate Change and Sustainability
-Innovations in Health Analytics
-Computational Bayesian Methods and Emerging Trends
-Public Health and Biostatistics
-New Methodologies and Recent Progress
-GenAI: Opportunities and Challenges
-Statistical Approaches to Risk Management
-Tasks of Gen AI and Big data Challenges
+    <p>
+      The Nepal Statistical Society (NeSS) is dedicated to fostering a
+      culture of statistical literacy and excellence through a variety of
+      initiatives, including seminars, workshops, and conferences that
+      facilitate knowledge sharing and collaboration among professionals in
+      the field.
+    </p>
 
-<b>Conference Objectives</b>
-Explore Advancements in Statistics and Data Science
-Facilitate Knowledge Sharing and Interdisciplinary Collaboration
-Address Contemporary Challenges
-Promote Professional Networking and capacity building
-Encourage evidence-based policy and decision-making
+    <p>
+      The society also emphasizes the importance of networking, providing
+      opportunities for members to connect with statistical experts both
+      locally and internationally.
+    </p>
 
-Submit your abstract at: statistics.conference.nepal@gmail.com
+    <p>
+      In continuation of its mission, NeSS is going to organize the
+      International Conference on Emerging Trends and Applications in
+      Statistics and Data Science (ICETASD-2026), which will bring together
+      statisticians, data scientists, researchers, and professionals to
+      explore cutting-edge developments and share insights shaping the
+      future of the field.
+    </p>
+
+    <p>
+      The conference offers a dynamic platform for exchanging ideas,
+      presenting research, and engaging with experts who are driving
+      forward data-driven solutions.
+    </p>
+  </div>
+</div>
+
+{/* CONFERENCE FOCUS AREAS */}
+<div className="mb-12">
+  <h3 className="text-2xl font-bold text-blue-700 mb-4">
+    Conference Focus Areas
+  </h3>
+
+  <ul className="list-disc list-inside text-gray-700 leading-8 space-y-1">
+    <li>Statistics in the Context of Modern Data Science and AI</li>
+    <li>Advances from Statistical Learning to Machine Learning</li>
+    <li>Statistical Modeling of Environmental Risks</li>
+    <li>Applications in Climate Change and Sustainability</li>
+    <li>Innovations in Health Analytics</li>
+    <li>Computational Bayesian Methods and Emerging Trends</li>
+    <li>Public Health and Biostatistics</li>
+    <li>New Methodologies and Recent Progress</li>
+    <li>GenAI: Opportunities and Challenges</li>
+    <li>Statistical Approaches to Risk Management</li>
+    <li>Tasks of Gen AI and Big Data Challenges</li>
+  </ul>
+</div>
+
+{/* CONFERENCE OBJECTIVES */}
+<div className="mb-12">
+  <h3 className="text-2xl font-bold text-blue-700 mb-4">
+    Conference Objectives
+  </h3>
+
+  <ul className="list-disc list-inside text-gray-700 leading-8 space-y-1">
+    <li>Explore Advancements in Statistics and Data Science</li>
+    <li>
+      Facilitate Knowledge Sharing and Interdisciplinary Collaboration
+    </li>
+    <li>Address Contemporary Challenges</li>
+    <li>
+      Promote Professional Networking and Capacity Building
+    </li>
+    <li>
+      Encourage Evidence-Based Policy and Decision-Making
+    </li>
+  </ul>
+  <br />
+  <div className="mb-12 flex items-center gap-3">
+  <h3 className="text-2xl font-bold text-blue-700">
+    Further Inquiry can be done at:
+  </h3>
+  <p className="text-gray-700 font-medium">
+    statnconf@gmail.com
+  </p>
+</div>
+</div>
 
 
 
 
-
-
-            </p>
-          </div>
 
           {/* IMPORTANT DATES */}
           <div className="mb-12">
