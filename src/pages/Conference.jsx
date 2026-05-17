@@ -36,17 +36,13 @@ export default function Conference() {
           Upcoming Conferences
         </h1>
 <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
-  Join researchers, statisticians, academicians, and students in two international academic events.
+  Join researchers, statisticians, academicians, and students in the following international academic events.
 </p>
       </section>
-
-
-
       {/* DETAILS SECTION */}
       <section
         id="conference-details"
-        className="max-w-6xl mx-auto px-4 pb-20"
-      >
+        className="max-w-6xl mx-auto px-4 pb-20">
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-center text-blue-700 mb-8">
             ICETASD - 2026 Details
