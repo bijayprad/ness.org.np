@@ -38,7 +38,7 @@ collaboration, training, and academic activities.
         <div>
           <h3 className="font-bold text-lg mb-4">Contact</h3>
           <ul className="space-y-2 text-gray-700">
-            <li>Email: <a href="mailto:info@example.com" className="hover:underline">nepalstatisticalsociety@gmail.com</a></li>
+            <li>Email: <a href="mailto:info@example.com" className="hover:underline">nepalstat.society@gmail.com</a></li>
             <li>Phone: <a href="tel:+1234567890" className="hover:underline"></a></li>
             <li>Samakhushi, Kathmandu, Nepal</li>
           </ul>
