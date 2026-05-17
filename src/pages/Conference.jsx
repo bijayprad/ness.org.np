@@ -33,7 +33,7 @@ export default function Conference() {
       {/* HERO */}
       <section className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-2 px-2 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Upcoming Conferences
+          Upcoming Conference
         </h1>
 <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
   Join researchers, statisticians, academicians, and students in the following international academic events.
