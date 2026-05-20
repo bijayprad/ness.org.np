@@ -31,19 +31,28 @@ export default function Conference() {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* HERO */}
-      <section className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-2 px-2 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        Emerging Trends and Applications in
-        <br></br> 
-        Statistics and Data Science
-        <br></br>
-        (ICETASD - 2026)
-        </h1>
-<p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
-  
-</p>
-      </section>
+<section
+  className="bg-cover bg-center text-white py-6 px-4 text-center rounded-2xl"
+  style={{
+    backgroundImage: "url('https://i.imgur.com/YvAttk4.jpeg')",
+  }}
+>
+  <div className="bg-black/40 rounded-2xl p-6">
+    <h1 className="text-4xl md:text-5xl font-bold mb-4">
+      Emerging Trends and Applications in
+      <br />
+      Statistics and Data Science
+      <br />
+      (ICETASD - 2026)
+    </h1>
+
+    <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
+      
+    </p>
+  </div>
+</section>
       {/* DETAILS SECTION */}
+
       <section
         id="conference-details"
         className="max-w-6xl mx-auto px-4 pb-20">
@@ -53,36 +62,29 @@ export default function Conference() {
           </h2>
 
 {/* BUTTONS */}
+
 <div className="flex flex-wrap justify-center gap-40 mb-10">
-
-  {/* Kathmandu University */}
   <a href="https://ku.edu.np"
-    className="bg-green-700 hover:bg-green-700 text-white px-6 py-5 rounded-2xl shadow-lg w-80 flex items-center gap-2">
-    <img src="https://i.imgur.com/ghC0qQI.jpeg"
+    className="bg-green-700 hover:bg-green-700 text-white px-6 py-5 rounded-2xl shadow-lg w-100 flex items-center gap-2">
+    <img src="https://i.imgur.com/gMBowQ2.jpeg"
       alt="Kathmandu University Logo"
-      className="w-40 h-20 object-contain"/>
+      className="w-28 h-16 object-contain"
+      />
+    <p className="font-semibold leading-relaxed text-left flex-1">
+      Department of Mathematics <br /> School of Science <br />Kathmandu University
+    </p> </a>
 
-    <p className="font-semibold leading-relaxed text-left">
-      Department of Mathematics <br />
-      School of Science <br />
-      Kathmandu University
-    </p>
-  </a>
-
-  {/* Nepal Statistical Society */}
-  <a
-    href="#"
+  <a href="#"
     className="bg-blue-700 hover:bg-blue-700 text-white px-6 py-5 rounded-2xl shadow-lg w-80 flex items-center gap-4">
-    <img src="https://i.imgur.com/3rnfLK4.jpeg"
+    <img src="https://i.imgur.com/ovp6wTc.jpeg"
       alt="NeSS Logo"
       className="w-20 h-20 object-contain"/>
     <p className="font-semibold leading-relaxed text-left">
       Nepal Statistical Society <br />
       (NeSS)
-    </p>
-  </a>
-
+    </p> </a>
 </div>
+
 
 
 
