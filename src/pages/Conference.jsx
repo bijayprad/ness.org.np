@@ -53,19 +53,38 @@ export default function Conference() {
           </h2>
 
 {/* BUTTONS */}
-<div className="flex flex-wrap justify-center gap-100 mb-10">
-<a href="https://ku.edu.np"
-    className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow"> 
-    Department of Mathematics <br></br>
-    School of Science <br></br>
-    Kathmandu University 
-    </a>
+<div className="flex flex-wrap justify-center gap-40 mb-10">
 
-<a href="#"
-className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow">
-  Nepal Statistical Society<br></br>
-  (NeSS)</a> 
-  </div>
+  {/* Kathmandu University */}
+  <a href="https://ku.edu.np"
+    className="bg-green-700 hover:bg-green-700 text-white px-6 py-5 rounded-2xl shadow-lg w-80 flex items-center gap-2">
+    <img src="https://i.imgur.com/ghC0qQI.jpeg"
+      alt="Kathmandu University Logo"
+      className="w-40 h-20 object-contain"/>
+
+    <p className="font-semibold leading-relaxed text-left">
+      Department of Mathematics <br />
+      School of Science <br />
+      Kathmandu University
+    </p>
+  </a>
+
+  {/* Nepal Statistical Society */}
+  <a
+    href="#"
+    className="bg-blue-700 hover:bg-blue-700 text-white px-6 py-5 rounded-2xl shadow-lg w-80 flex items-center gap-4">
+    <img src="https://i.imgur.com/3rnfLK4.jpeg"
+      alt="NeSS Logo"
+      className="w-20 h-20 object-contain"/>
+    <p className="font-semibold leading-relaxed text-left">
+      Nepal Statistical Society <br />
+      (NeSS)
+    </p>
+  </a>
+
+</div>
+
+
 
 
 
