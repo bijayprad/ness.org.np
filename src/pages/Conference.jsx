@@ -33,10 +33,14 @@ export default function Conference() {
       {/* HERO */}
       <section className="bg-gradient-to-r from-blue-700 to-indigo-700 text-white py-2 px-2 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Upcoming Conference
+        Emerging Trends and Applications in
+        <br></br> 
+        Statistics and Data Science
+        <br></br>
+        (ICETASD - 2026)
         </h1>
 <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
-  Join researchers, statisticians, academicians, and students in the following international academic event.
+  
 </p>
       </section>
       {/* DETAILS SECTION */}
@@ -45,8 +49,27 @@ export default function Conference() {
         className="max-w-6xl mx-auto px-4 pb-20">
         <div className="bg-white rounded-2xl shadow-lg p-8">
           <h2 className="text-3xl font-bold text-center text-blue-700 mb-8">
-            ICETASD - 2026 Details
+             <u>Organized by</u><br></br>
           </h2>
+
+{/* BUTTONS */}
+<div className="flex flex-wrap justify-center gap-100 mb-10">
+<a href="https://ku.edu.np"
+    className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow"> 
+    Department of Mathematics <br></br>
+    School of Science <br></br>
+    Kathmandu University 
+    </a>
+
+<a href="#"
+className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow">
+  Nepal Statistical Society<br></br>
+  (NeSS)</a> 
+  </div>
+
+
+
+
 
           {/* BUTTONS */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
