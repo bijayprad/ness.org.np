@@ -25,7 +25,7 @@ export default function Archieve() {
       rel="noopener noreferrer"
       className="text-blue-600 hover:underline"
     >
-      Volume 1, Issue 1
+      {/* Making not visible Volume 1, Issue 1 */}
     </a>
   </li>
   

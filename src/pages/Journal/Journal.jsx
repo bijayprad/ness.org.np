@@ -30,7 +30,7 @@ Its primary objective is to promote rigorous research, innovation, and practical
       <p className="mb-6">
         Proposed Published Date: 2026/09/20
       </p>
-
+{/* Making not visible 
       <h1 className="text-3xl font-bold mb-6"></h1>
 
       <div className="grid gap-6">
@@ -50,7 +50,9 @@ Its primary objective is to promote rigorous research, innovation, and practical
             </a>
           </div>
         ))}
+          
       </div>
+      */}
     </div>
   );
 }
