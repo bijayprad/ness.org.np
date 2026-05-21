@@ -35,7 +35,7 @@ export default function Contact() {
                 post: "Vice President",
                 name: "Dr. Bijay Lal Pradhan",
                 email: "bijiayprad@gmail.com ",
-                contact: "9851172978"
+                contact: "9855030302"
               },
               {
                 post: "Secretary",
