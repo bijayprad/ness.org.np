@@ -43,8 +43,9 @@ export default function Conference() {
       <br />
       Statistics and Data Science
       <br />
-      (ICETASD - 2026)
+      (ICETASD - 2026) 
     </h1>
+    <h4>September 20-21, 2026</h4>
 
     <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
       
