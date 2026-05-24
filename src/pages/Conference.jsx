@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import wrcImage from "../assets/pics/wrc1.jpg";
+import { motion } from "framer-motion";
 
 export default function Conference() {
   const targetDate = new Date("September 20, 2026 07:00:00").getTime();
@@ -21,136 +21,126 @@ export default function Conference() {
   const [timeLeft, setTimeLeft] = useState(getTimeLeft());
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft());
-    }, 1000);
-
+    const timer = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
     return () => clearInterval(timer);
   }, []);
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="bg-gray-50 text-gray-800">
-      {/* HERO */}
-<section
-  className="bg-cover bg-center text-white py-6 px-4 text-center rounded-2xl"
+    <div className="bg-gray-50 text-gray-800 pb-20 md:pb-0">
+
+{/* HERO */}
+<motion.section
+  initial="hidden"
+  animate="visible"
+  variants={fadeUp}
+  transition={{ duration: 0.6 }}
+  className="bg-cover bg-center text-white text-center px-4 py-6 md:py-10"
   style={{
     backgroundImage: "url('https://i.imgur.com/YvAttk4.jpeg')",
   }}
 >
-  <div className="bg-black/40 rounded-2xl p-6">
-  <b>International Conference on</b>
-    <h1 className="text-4xl md:text-5xl font-bold mb-4">
-      Emerging Trends and Applications in
-      <br />
-      Statistics and Data Science
-      <br />
-      (ICETASD - 2026) 
-    </h1>
-    <h4>September 20-21, 2026</h4>
+  <div className="bg-black/50 rounded-2xl p-4 md:p-8 max-w-4xl mx-auto">
+    <p className="text-sm md:text-base font-semibold">
+      International Conference on
+    </p>
 
-    <p className="text-lg md:text-xl mx-auto md:whitespace-nowrap">
-      
+    <h1 className="text-2xl md:text-5xl font-bold mt-2 leading-snug">
+      Emerging Trends and Applications in Statistics and Data Science
+      <br />
+      (ICETASD - 2026)
+    </h1>
+
+    <p className="mt-2 text-sm md:text-lg">
+      September 20–21, 2026
     </p>
   </div>
-</section>
-      {/* DETAILS SECTION */}
+</motion.section>
 
-      <section
-        id="conference-details"
-        className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="bg-white rounded-2xl shadow-lg p-8">
-          <h2 className="text-3xl font-bold text-center text-blue-700 mb-8">
-             <u>Organized by</u><br></br>
+      {/* MAIN */}
+      <div className="max-w-6xl mx-auto px-4 py-10 space-y-12">
+
+        {/* ORGANIZED BY */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-white p-6 md:p-10 rounded-2xl shadow"
+        >
+          <h2 className="text-xl md:text-3xl font-bold text-center text-blue-700 mb-6 underline">
+            Organized by
           </h2>
 
-{/* BUTTONS */}
+          <div className="flex flex-col md:flex-row gap-6 justify-center">
 
-<div className="flex flex-wrap justify-center gap-40 mb-10">
-  <a href="https://ku.edu.np"
-    className="bg-green-700 hover:bg-green-700 text-white px-6 py-5 rounded-2xl shadow-lg w-100 flex items-center gap-2">
-    <img src="https://i.imgur.com/gMBowQ2.jpeg"
-      alt="Kathmandu University Logo"
-      className="w-28 h-16 object-contain"
-      />
-    <p className="font-semibold leading-relaxed text-left flex-1">
-      Department of Mathematics <br /> School of Science <br />Kathmandu University
-    </p> </a>
+            <a className="flex flex-col md:flex-row items-center gap-4 bg-green-700 text-white p-5 rounded-2xl shadow">
+              <img src="https://i.imgur.com/gMBowQ2.jpeg" className="w-20 md:w-24" />
+              <p className="text-sm md:text-base">
+                Department of Mathematics <br />
+                School of Science <br />
+                Kathmandu University
+              </p>
+            </a>
 
-  <a href="#"
-    className="bg-blue-700 hover:bg-blue-700 text-white px-6 py-5 rounded-2xl shadow-lg w-80 flex items-center gap-4">
-    <img src="https://i.imgur.com/ovp6wTc.jpeg"
-      alt="NeSS Logo"
-      className="w-20 h-20 object-contain"/>
-    <p className="font-semibold leading-relaxed text-left">
-      Nepal Statistical Society <br />
-      (NeSS)
-    </p> </a>
-</div>
+            <a className="flex flex-col md:flex-row items-center gap-4 bg-blue-700 text-white p-5 rounded-2xl shadow">
+              <img src="https://i.imgur.com/ovp6wTc.jpeg" className="w-20 md:w-24" />
+              <p>Nepal Statistical Society (NeSS)</p>
+            </a>
 
+          </div>
+        </motion.div>
 
+        {/* COUNTDOWN */}
+        {timeLeft && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          >
+            {[
+              ["Days", timeLeft.days],
+              ["Hours", timeLeft.hours],
+              ["Minutes", timeLeft.minutes],
+              ["Seconds", timeLeft.seconds],
+            ].map((item, i) => (
+              <div key={i} className="bg-blue-50 p-5 rounded-xl text-center shadow">
+                <p className="text-2xl md:text-3xl font-bold text-blue-700">
+                  {item[1]}
+                </p>
+                <p className="text-sm">{item[0]}</p>
+              </div>
+            ))}
+          </motion.div>
+        )}
 
+        {/* CONTENT BLOCK (EXAMPLE WRAP — KEEP YOUR TEXT HERE) */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="bg-white p-6 md:p-10 rounded-2xl shadow space-y-6"
+        >
 
-
-
-
-
-          {/* BUTTONS */}
+     {/* BUTTONS */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-
-  <a
-    href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/bijayprad/share/main/pdf/nessconfbro2026.pdf&embedded=true"
+<a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/bijayprad/share/main/pdf/nessconfbro2026.pdf&embedded=true"
     target="_blank"
     rel="noopener noreferrer"
-    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow"
-  >
-    Brochure
-  </a>
+    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow">Brochure</a>
             {/*
-            <a
-              href="https://canva.link/x4hdumsrx7wkc19"
+            <a href="https://canva.link/x4hdumsrx7wkc19"
               target="_blank"
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow"
-            >
-              Brochure
-            </a>
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow">Brochure</a>
             */}
-
-            <a
-              href="https://forms.gle/k3pXo8gaBSYbj4Dy8"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow"
-            >
-              Submit Abstract
-            </a>
-
-            <a
-              href="#"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow"
-            >
-              Register
-            </a>
+            <a href="https://forms.gle/k3pXo8gaBSYbj4Dy8"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">Submit Abstract</a>
+            <a href="#"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow">Register</a>
           </div>
-
-          {/* COUNTDOWN */}
-          {timeLeft && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-              {[
-                ["Days", timeLeft.days],
-                ["Hours", timeLeft.hours],
-                ["Minutes", timeLeft.minutes],
-                ["Seconds", timeLeft.seconds],
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-blue-50 rounded-xl p-5 text-center shadow"
-                >
-                  <p className="text-3xl font-bold text-blue-700">
-                    {item[1]}
-                  </p>
-                  <p className="text-gray-600">{item[0]}</p>
-                </div>
-              ))}
-            </div>
-          )}
 
  {/* CALL FOR PAPERS */}
 <div className="mb-12">
@@ -239,121 +229,102 @@ export default function Conference() {
     </li>
   </ul>
   <br />
+</div>
+
+
+
+
+        </motion.div>
+      </div>
+
+      {/* IMPORTANT DATES */}
+{/* IMPORTANT DATES */}
+<div className="mb-12">
+  <h3 className="text-2xl font-bold text-blue-700 mb-4">Important Dates</h3>
+  <table className="w-full border text-left text-sm">
+    <thead className="bg-blue-100 hidden sm:table-header-group">
+      <tr>
+        <th className="p-3 border">Event</th>
+        <th className="p-3 border">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {[
+        ["Last date for abstract submission", "5 August, 2026"],
+        ["Acceptance Notification", "10 August, 2026"],
+        ["Conference Day", "20–21 September, 2026"],
+      ].map(([event, date]) => (
+        <tr key={event} className="block border rounded-lg mb-3 overflow-hidden odd:bg-white even:bg-gray-50 sm:table-row sm:mb-0 sm:rounded-none">
+          <td data-label="Event"
+            className="p-3 border-b flex gap-2 sm:table-cell sm:border
+                       before:content-[attr(data-label)] before:font-medium
+                       before:text-slate-500 before:w-20 before:shrink-0
+                       sm:before:hidden">
+            {event}
+          </td>
+          <td data-label="Date"
+            className="p-3 flex gap-2 sm:table-cell sm:border
+                       before:content-[attr(data-label)] before:font-medium
+                       before:text-slate-500 before:w-20 before:shrink-0
+                       sm:before:hidden">
+            {date}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+{/* FEES */}
+<div>
+  <h3 className="text-2xl font-bold text-blue-700 mb-4">Conference Fees</h3>
+  <div className="overflow-x-auto">
+    <table className="w-full border text-left text-sm">
+      <thead className="bg-blue-100 hidden sm:table-header-group">
+        <tr>
+          <th className="p-3 border">Category</th>
+          <th className="p-3 border">Early Bird (upto 20<sup>th</sup> Aug, 2026)</th>
+          <th className="p-3 border">Regular (21<sup>st</sup> Aug – 19<sup>th</sup> Sep, 2026)</th>
+          <th className="p-3 border">Onsite</th>
+        </tr>
+      </thead>
+      <tbody>
+        {[
+          ["Nepali Students",              "NRS 2,000", "NRS 2,500", "NRS 3,000"],
+          ["Nepali Faculty / Researchers", "NRS 3,000", "NRS 3,500", "NRS 4,000"],
+          ["Nepali Institutional",         "NRS 10,000","NRS 12,000","NRS 15,000"],
+          ["South Asia Participants",      "US$ 80",    "US$ 100",   "US$ 125"],
+          ["Foreign Participants",         "US$ 200",   "US$ 225",   "US$ 250"],
+        ].map(([cat, early, regular, onsite]) => (
+          <tr key={cat} className="odd:bg-white even:bg-gray-50 block border rounded-lg mb-3 overflow-hidden sm:table-row sm:mb-0 sm:rounded-none">
+            <td data-label="Category"   className="p-3 border-b flex gap-2 font-medium sm:font-normal sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{cat}</td>
+            <td data-label="Early Bird" className="p-3 border-b flex gap-2 sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{early}</td>
+            <td data-label="Regular"    className="p-3 border-b flex gap-2 sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{regular}</td>
+            <td data-label="Onsite"     className="p-3 flex gap-2 sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{onsite}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
   <div className="mb-12 flex items-center gap-3">
-  <h3 className="text-2xl font-bold text-blue-700">
-    Further Inquiry can be done at:
+  <h3 className="text-2xl font-medium text-blue-500">
+    Further Inquiry:
   </h3>
-  <p className="text-gray-700 font-medium">
+  <p className="text-gray-500 font-medium">
     statnconf@gmail.com
   </p>
 </div>
-</div>
+      {/* 📌 MOBILE STICKY REGISTER BUTTON */}
+      <div className="fixed bottom-0 left-0 w-full md:hidden bg-white shadow-lg p-3 z-50">
+        <a
+          href="#"
+          className="block text-center bg-blue-600 text-white py-3 rounded-xl font-semibold active:scale-95 transition"
+        >
+          Register Now
+        </a>
+      </div>
 
-
-
-
-
-          {/* IMPORTANT DATES */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-blue-700 mb-4">
-              Important Dates
-            </h3>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border text-left">
-                <thead className="bg-blue-100">
-                  <tr>
-                    <th className="p-3 border">Event</th>
-                    <th className="p-3 border">Date</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">
-                      Last date for abstract submission
-                    </td>
-                    <td className="p-3 border">5 August, 2026</td>
-                  </tr>
-
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">Acceptance Notification</td>
-                    <td className="p-3 border">10 August, 2026</td>
-                  </tr>
-
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">Conference Day</td>
-                    <td className="p-3 border">20-21 September, 2026</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          {/* FEES */}
-          <div>
-            <h3 className="text-2xl font-bold text-blue-700 mb-4">
-              Conference Fees
-            </h3>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border text-left">
-                <thead className="bg-blue-100">
-                  <tr>
-                    <th className="p-3 border">Category</th>
-                    <th className="p-3 border">Early Bird (upto20<sup>th</sup> August, 2026)</th>
-                    <th className="p-3 border">Regular (21<sup>st</sup> Aug - 19<sup>th</sup> Sept, 2026)</th>
-                    <th className="p-3 border">Onsite</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">Nepali Students</td>
-                    <td className="p-3 border">NRS 2000</td>
-                    <td className="p-3 border">NRS 2500</td>
-                    <td className="p-3 border">NRS 3000</td>
-                  </tr>
-
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">Nepali Faculty / Researchers</td>
-                    <td className="p-3 border">NRS 3000</td>
-                    <td className="p-3 border">NRS 3500</td>
-                    <td className="p-3 border">NRS 4000</td>
-                  </tr>
-
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">
-                      Nepali Institutional Participants
-                    </td>
-                    <td className="p-3 border">NRS 10000</td>
-                    <td className="p-3 border">NRS 12000</td>
-                    <td className="p-3 border">NRS 15000</td>
-                  </tr>
-
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">
-                      Participants from South Asia
-                    </td>
-                    <td className="p-3 border">US$ 80</td>
-                    <td className="p-3 border">US$ 100</td>
-                    <td className="p-3 border">US$ 125</td>
-                  </tr>
-
-
-                  <tr className="odd:bg-white even:bg-gray-50">
-                    <td className="p-3 border">Foreign Participants</td>
-                    <td className="p-3 border">US$ 200</td>
-                    <td className="p-3 border">US$ 225</td>
-                    <td className="p-3 border">US$ 250</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
-
