@@ -6,7 +6,7 @@ export default function Activities() {
       {/* Featured Program */}
       <section className="max-w-6xl mx-auto px-4 py-2">
         <h2 className="text-3xl font-bold text-center mb-10 text-blue-700">
-          Upcoming Talk Series - 26<sup>th</sup> April, 2026
+          Talk Series - 26<sup>th</sup> April, 2026
         </h2>
         <div className="grid md:grid-cols-2 gap-10 items-center bg-white shadow-xl rounded-2xl p-6">
           {/* Image */}
@@ -72,37 +72,79 @@ Passcode: thank you for joining meeting
         </div>
       </section>
     {/* Activities Section */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">Activities</h2>
+{/* Gallery Section */}
+<section className="max-w-6xl mx-auto px-4 py-12">
+  <h2 className="text-3xl font-bold mb-10 text-center">Talk Series</h2>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Data Analysis Training",
-              description:
-                "Learn computer applications, Python, and statistics for research.",
-            },
-            {
-              title: "Conference",
-              description:
-                "Each year Nepal Statistical Society conducts conferences.",
-            },
-            {
-              title: "Talk Program",
-              description:
-                "Every two months, NeSS organizes a hybrid talk series.",
-            },
-          ].map((item, index) => (
-            <div
+  {(() => {
+    const images = [
+      { url: "https://i.imgur.com/NIrFekw.jpg", title: "Talk Series 1" },
+      { url: "https://i.imgur.com/wHOlQWE.jpg", title: "Talk Series 3" },
+      { url: "https://i.imgur.com/3SE897z.jpg", title: "Talk Series 5" },
+      { url: "https://i.imgur.com/0Pnq7Ai.jpg", title: "Talk Series 7" },
+      { url: "https://i.imgur.com/yzjYui0.jpg", title: "Talk Series 9" },
+      { url: "https://i.imgur.com/1bfrDyB.jpg", title: "Talk Series 2" },
+      { url: "https://i.imgur.com/DKe5dFw.jpg", title: "Talk Series 4" },
+      { url: "https://i.imgur.com/4VtweXB.jpg", title: "Talk Series 6" },     
+      { url: "https://i.imgur.com/bWvLeJv.jpg", title: "Talk Series 8" },
+      { url: "https://i.imgur.com/dtLYakO.jpg", title: "Talk Series 10" },
+    ];
+
+    // split into 2 columns
+    const left = images.slice(0, 5);
+    const right = images.slice(5, 10);
+
+    return (
+      <div className="grid md:grid-cols-2 gap-8">
+
+        {/* LEFT COLUMN */}
+        <div className="space-y-6">
+          {left.map((item, index) => (
+            <a
               key={index}
-              className="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all"
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              className="block group"
             >
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
+              <img
+                src={item.url}
+                alt={item.title}
+                className="w-full h-64 object-cover rounded-xl shadow-md group-hover:shadow-xl transition"
+              />
+              <p className="mt-2 text-center text-gray-700 group-hover:text-blue-600">
+                {item.title}
+              </p>
+            </a>
           ))}
         </div>
-      </section>
+
+        {/* RIGHT COLUMN */}
+        <div className="space-y-6">
+          {right.map((item, index) => (
+            <a
+              key={index}
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              className="block group"
+            >
+              <img
+                src={item.url}
+                alt={item.title}
+                className="w-full h-64 object-cover rounded-xl shadow-md group-hover:shadow-xl transition"
+              />
+              <p className="mt-2 text-center text-gray-700 group-hover:text-blue-600">
+                {item.title}
+              </p>
+            </a>
+          ))}
+        </div>
+
+      </div>
+    );
+  })()}
+</section>
 
 
 
