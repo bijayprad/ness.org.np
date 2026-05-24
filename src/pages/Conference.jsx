@@ -38,6 +38,7 @@ export default function Conference() {
   }}
 >
   <div className="bg-black/40 rounded-2xl p-6">
+  <b>International Conference on</b>
     <h1 className="text-4xl md:text-5xl font-bold mb-4">
       Emerging Trends and Applications in
       <br />
@@ -95,6 +96,16 @@ export default function Conference() {
 
           {/* BUTTONS */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
+
+  <a
+    href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/bijayprad/share/main/pdf/nessconfbro2026.pdf&embedded=true"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow"
+  >
+    Brochure
+  </a>
+            {/*
             <a
               href="https://canva.link/x4hdumsrx7wkc19"
               target="_blank"
@@ -102,6 +113,7 @@ export default function Conference() {
             >
               Brochure
             </a>
+            */}
 
             <a
               href="https://forms.gle/k3pXo8gaBSYbj4Dy8"
