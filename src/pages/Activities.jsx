@@ -66,17 +66,89 @@ Zoom Meeting ID: 884 0050 2493.
 <br></br>
 Passcode: thank you for joining meeting
 </div>
-</div>
-</div>
+
+
+          </div>
+        </div>
+      </section>
+    {/* Activities Section */}
+{/* Gallery Section */}
+<section className="max-w-6xl mx-auto px-4 py-12">
+  <h2 className="text-3xl font-bold mb-10 text-center">Talk Series</h2>
+
+  {(() => {
+    const images = [
+      { url: "https://i.imgur.com/NIrFekw.jpg", title: "Talk Series 1" },
+      { url: "https://i.imgur.com/wHOlQWE.jpg", title: "Talk Series 3" },
+      { url: "https://i.imgur.com/3SE897z.jpg", title: "Talk Series 5" },
+      { url: "https://i.imgur.com/0Pnq7Ai.jpg", title: "Talk Series 7" },
+      { url: "https://i.imgur.com/yzjYui0.jpg", title: "Talk Series 9" },
+      { url: "https://i.imgur.com/1bfrDyB.jpg", title: "Talk Series 2" },
+      { url: "https://i.imgur.com/DKe5dFw.jpg", title: "Talk Series 4" },
+      { url: "https://i.imgur.com/4VtweXB.jpg", title: "Talk Series 6" },     
+      { url: "https://i.imgur.com/bWvLeJv.jpg", title: "Talk Series 8" },
+      { url: "https://i.imgur.com/dtLYakO.jpg", title: "Talk Series 10" },
+    ];
+
+    // split into 2 columns
+    const left = images.slice(0, 5);
+    const right = images.slice(5, 10);
+
+    return (
+      <div className="grid md:grid-cols-2 gap-8">
+
+        {/* LEFT COLUMN */}
+        <div className="space-y-6">
+          {left.map((item, index) => (
+            <a
+              key={index}
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              className="block group"
+            >
+              <img
+                src={item.url}
+                alt={item.title}
+                className="w-full h-64 object-cover rounded-xl shadow-md group-hover:shadow-xl transition"
+              />
+              <p className="mt-2 text-center text-gray-700 group-hover:text-blue-600">
+                {item.title}
+              </p>
+            </a>
+          ))}
+        </div>
+
+        {/* RIGHT COLUMN */}
+        <div className="space-y-6">
+          {right.map((item, index) => (
+            <a
+              key={index}
+              href={item.url}
+              target="_blank"
+              rel="noreferrer"
+              className="block group"
+            >
+              <img
+                src={item.url}
+                alt={item.title}
+                className="w-full h-64 object-cover rounded-xl shadow-md group-hover:shadow-xl transition"
+              />
+              <p className="mt-2 text-center text-gray-700 group-hover:text-blue-600">
+                {item.title}
+              </p>
+            </a>
+          ))}
+        </div>
+
+      </div>
+    );
+  })()}
 </section>
-</div>
-
-
-
- 
 
 
 
 
+    </div>
   );
 }
