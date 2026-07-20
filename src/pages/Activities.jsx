@@ -6,7 +6,7 @@ export default function Activities() {
       {/* Featured Program */}
       <section className="max-w-6xl mx-auto px-4 py-2">
         <h2 className="text-3xl font-bold text-center mb-10 text-blue-700">
-          Upcoming Talk Series - 26<sup>th</sup> April, 2026
+          Talk Series - 26<sup>th</sup> April, 2026
         </h2>
         <div className="grid md:grid-cols-2 gap-10 items-center bg-white shadow-xl rounded-2xl p-6">
           {/* Image */}
@@ -66,47 +66,17 @@ Zoom Meeting ID: 884 0050 2493.
 <br></br>
 Passcode: thank you for joining meeting
 </div>
+</div>
+</div>
+</section>
+</div>
 
 
-          </div>
-        </div>
-      </section>
-    {/* Activities Section */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold mb-8 text-center">Activities</h2>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Data Analysis Training",
-              description:
-                "Learn computer applications, Python, and statistics for research.",
-            },
-            {
-              title: "Conference",
-              description:
-                "Each year Nepal Statistical Society conducts conferences.",
-            },
-            {
-              title: "Talk Program",
-              description:
-                "Every two months, NeSS organizes a hybrid talk series.",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-r from-blue-600 to-blue-500 text-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all"
-            >
-              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+ 
 
 
 
 
-    </div>
   );
 }

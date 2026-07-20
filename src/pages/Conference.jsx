@@ -80,6 +80,8 @@ export default function Conference() {
 
             <a className="flex flex-col md:flex-row items-center gap-4 bg-green-700 text-white p-5 rounded-2xl shadow">
               <img src="https://i.imgur.com/gMBowQ2.jpeg" className="w-20 md:w-24" />
+              
+              
               <p className="text-sm md:text-base">
                 Department of Mathematics <br />
                 School of Science <br />
@@ -307,13 +309,80 @@ export default function Conference() {
     </table>
   </div>
 </div>
+
+{/* ASSOCIATE ORGANIZATIONS */}
+<div className="mt-12">
+  <h3 className="text-2xl font-bold text-blue-700 mb-6">
+    Associate Organizations
+  </h3>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+
+    {/* Organization 1 */}
+    <a
+      href="https://tucds.edu.np/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="border rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 bg-white flex flex-col items-center text-center"
+    >
+      <img
+        src="https://i.imgur.com/BWzdiJI.jpeg"
+        alt="Organization 1"
+        className="h-20 object-contain mb-4"
+      />
+
+      <h4 className="font-semibold text-lg text-gray-800">
+        Central Department of Statistics, TU
+      </h4>
+
+      <p className="text-sm text-blue-600 mt-1">
+        Visit Website
+      </p>
+    </a>
+
+    {/* Organization 2 */}
+    <a
+      href="https://sms.tu.edu.np/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="border rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 bg-white flex flex-col items-center text-center"
+    >
+      <img
+        src="https://i.imgur.com/QmCUxiz.jpeg"
+        alt="Organization 2"
+        className="h-20 object-contain mb-4"
+      />
+
+      <h4 className="font-semibold text-lg text-gray-800">
+        School of Matematical Sciences, TU
+      </h4>
+
+      <p className="text-sm text-blue-600 mt-1">
+        Visit Website
+      </p>
+    </a>
+
+  </div>
+</div>
+
+{/* ASSOCIATE ORGANIZATIONS */}
+<div className="mt-12">
+
   <div className="mb-12 flex items-center gap-3">
   <h3 className="text-2xl font-medium text-blue-500">
     Further Inquiry:
   </h3>
   <p className="text-gray-500 font-medium">
-    statnconf@gmail.com
+    statnconf@gmail.com 
   </p>
+    <h3 className="text-2xl font-medium text-blue-500">
+    Mobile(WhatsApp):
+  </h3>
+  <p className="text-gray-500 font-medium">
+    +977  9855030302
+  </p>
+</div>
+
 </div>
       {/* 📌 MOBILE STICKY REGISTER BUTTON */}
       <div className="fixed bottom-0 left-0 w-full md:hidden bg-white shadow-lg p-3 z-50">
