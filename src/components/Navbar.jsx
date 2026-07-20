@@ -1,13 +1,10 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "../assets/pics/logo.png";
 
 export default function Navbar() {
-  const { pathname } = useLocation();
-
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [journalOpen, setJournalOpen] = useState(false);
 
   const links = [
     { path: "/", label: "Home" },
@@ -15,6 +12,9 @@ export default function Navbar() {
     { path: "/members", label: "Members" },
     { path: "/activities", label: "Activities" },
   ];
+
+  const journalLinkClass =
+    "font-semibold px-3 py-2 rounded-lg transition-all text-gray-800 hover:bg-gray-100";
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -50,58 +50,14 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* DESKTOP DROPDOWN */}
-          <div className="relative group">
-
-            <button
-              className={`font-semibold px-3 py-2 rounded-lg transition-all ${
-                pathname.startsWith("/journal")
-                  ? "bg-blue-600 text-white shadow"
-                  : "text-gray-800 hover:bg-gray-100"
-              }`}
-            >
-              Journal ▾
-            </button>
-
-            <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-xl py-2 border hidden group-hover:block">
-
-              <NavLink
-                to="/journal"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Journal Home
-              </NavLink>
-
-              <NavLink
-                to="/journal/editorial"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Editorial Board
-              </NavLink>
-
-              <NavLink
-                to="/journal/guidelinesa"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Guidelines for Authors
-              </NavLink>
-
-              <NavLink
-                to="/journal/guidelinesb"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Guidelines for Reviewer
-              </NavLink>
-
-              <NavLink
-                to="/journal/archieve"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Archives
-              </NavLink>
-
-            </div>
-          </div>
+          <a
+            href="https://journal.ness.org.np/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={journalLinkClass}
+          >
+            Journal
+          </a>
 
           <NavLink
             to="/contact"
@@ -147,62 +103,15 @@ export default function Navbar() {
             </NavLink>
           ))}
 
-          {/* MOBILE JOURNAL DROPDOWN */}
-          <div>
-            <button
-              onClick={() => setJournalOpen(!journalOpen)}
-              className="w-full flex justify-between items-center px-4 py-3 rounded-lg font-medium text-gray-800 hover:bg-gray-100"
-            >
-              Journal
-              <ChevronDown
-                size={18}
-                className={`transition-transform ${
-                  journalOpen ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-
-            {journalOpen && (
-              <div className="ml-4 mt-2 space-y-1">
-
-                <NavLink
-                  to="/journal"
-                  className="block px-4 py-2 hover:bg-gray-100 rounded"
-                >
-                  Journal Home
-                </NavLink>
-
-                <NavLink
-                  to="/journal/editorial"
-                  className="block px-4 py-2 hover:bg-gray-100 rounded"
-                >
-                  Editorial Board
-                </NavLink>
-
-                <NavLink
-                  to="/journal/guidelinesa"
-                  className="block px-4 py-2 hover:bg-gray-100 rounded"
-                >
-                  Guidelines for Authors
-                </NavLink>
-
-                <NavLink
-                  to="/journal/guidelinesb"
-                  className="block px-4 py-2 hover:bg-gray-100 rounded"
-                >
-                  Guidelines for Reviewer
-                </NavLink>
-
-                <NavLink
-                  to="/journal/archieve"
-                  className="block px-4 py-2 hover:bg-gray-100 rounded"
-                >
-                  Archives
-                </NavLink>
-
-              </div>
-            )}
-          </div>
+          <a
+            href="https://journal.ness.org.np/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileOpen(false)}
+            className="block px-4 py-3 rounded-lg font-medium text-gray-800 hover:bg-gray-100"
+          >
+            Journal
+          </a>
 
           <NavLink
             to="/contact"
