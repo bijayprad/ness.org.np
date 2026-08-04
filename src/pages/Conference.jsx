@@ -64,7 +64,7 @@ export default function Conference() {
       {/* MAIN */}
      {/* BUTTONS */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-<a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/bijayprad/share/main/pdf/nessconfbro2026.pdf&embedded=true"
+<a href="https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/broness1.jpg"
     target="_blank"
     rel="noopener noreferrer"
     className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow">Brochure</a>
@@ -270,8 +270,8 @@ export default function Conference() {
     </thead>
     <tbody>
       {[
-        ["Last date for abstract submission", "5 August, 2026"],
-        ["Acceptance Notification", "10 August, 2026"],
+        ["Last date for abstract submission", "20 August, 2026"],
+        ["Acceptance Notification", "23 August, 2026"],
         ["Conference Day", "20–21 September, 2026"],
       ].map(([event, date]) => (
         <tr key={event} className="block border rounded-lg mb-3 overflow-hidden odd:bg-white even:bg-gray-50 sm:table-row sm:mb-0 sm:rounded-none">
@@ -303,7 +303,7 @@ export default function Conference() {
       <thead className="bg-blue-100 hidden sm:table-header-group">
         <tr>
           <th className="p-3 border">Category</th>
-          <th className="p-3 border">Early Bird (upto 20<sup>th</sup> Aug, 2026)</th>
+          <th className="p-3 border">Early Bird (upto 25<sup>th</sup> Aug, 2026)</th>
           <th className="p-3 border">Regular (21<sup>st</sup> Aug – 19<sup>th</sup> Sep, 2026)</th>
           <th className="p-3 border">Onsite</th>
         </tr>
@@ -344,8 +344,8 @@ export default function Conference() {
       className="border rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 bg-white flex flex-col items-center text-center"
     >
       <img
-        src="https://i.imgur.com/BWzdiJI.jpeg"
-        alt="Organization 1"
+        src="https://i.imgur.com/PMcHY2r.jpeg"
+        alt="Organization 1" 
         className="h-20 object-contain mb-4"
       />
 
@@ -373,6 +373,28 @@ export default function Conference() {
 
       <h4 className="font-semibold text-lg text-gray-800">
         School of Matematical Sciences, TU
+      </h4>
+
+      <p className="text-sm text-blue-600 mt-1">
+        Visit Website
+      </p>
+    </a>
+
+    {/* Organization 3 */}
+    <a
+      href="https://www.oic.edu.np/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="border rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 bg-white flex flex-col items-center text-center"
+    >
+      <img
+        src="https://i.imgur.com/7A3pe9U.jpeg"  
+        alt="Organization 3"
+        className="h-20 object-contain mb-4"
+      />
+
+      <h4 className="font-semibold text-lg text-gray-800">
+        Orchid International College
       </h4>
 
       <p className="text-sm text-blue-600 mt-1">
