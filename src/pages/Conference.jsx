@@ -62,6 +62,23 @@ export default function Conference() {
 </motion.section>
 
       {/* MAIN */}
+     {/* BUTTONS */}
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
+<a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/bijayprad/share/main/pdf/nessconfbro2026.pdf&embedded=true"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow">Brochure</a>
+            {/*
+            <a href="https://canva.link/x4hdumsrx7wkc19"
+              target="_blank"
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow">Brochure</a>
+            */}
+            <a href="https://forms.gle/k3pXo8gaBSYbj4Dy8"
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">Submit Abstract</a>
+            <a href="https://forms.gle/XcrYkVobgeZcEZie7"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow">Register</a>
+          </div>
+      
       <div className="max-w-6xl mx-auto px-4 py-10 space-y-12">
 
         {/* ORGANIZED BY */}
@@ -127,22 +144,23 @@ export default function Conference() {
           className="bg-white p-6 md:p-10 rounded-2xl shadow space-y-6"
         >
 
-     {/* BUTTONS */}
+     {/* BUTTONS 
           <div className="flex flex-wrap justify-center gap-4 mb-10">
 <a href="https://docs.google.com/gview?url=https://raw.githubusercontent.com/bijayprad/share/main/pdf/nessconfbro2026.pdf&embedded=true"
     target="_blank"
     rel="noopener noreferrer"
     className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow">Brochure</a>
-            {/*
+            
             <a href="https://canva.link/x4hdumsrx7wkc19"
               target="_blank"
               className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl shadow">Brochure</a>
-            */}
+            
             <a href="https://forms.gle/k3pXo8gaBSYbj4Dy8"
               className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl shadow">Submit Abstract</a>
-            <a href="#"
+            <a href="https://forms.gle/XcrYkVobgeZcEZie7"
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl shadow">Register</a>
           </div>
+          */}
 
  {/* CALL FOR PAPERS */}
 <div className="mb-12">
