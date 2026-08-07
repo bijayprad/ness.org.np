@@ -423,6 +423,35 @@ export default function Conference() {
   </p>
 </div>
 
+
+{/* keep your PDF link for Abstract book 
+*/}
+<div className="flex gap-5">
+<a
+  href="https://docs.google.com/gview?embedded=1&url=https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/AbstractBook.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="ml-3  px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+>
+  📄 View Abstract Book
+</a>
+
+<button
+  onClick={() =>
+    window.open(
+      "https://docs.google.com/spreadsheets/d/1pWt2JGd2Dasbw6hFQ0gYMW98TQmDcnhuou0-me_dnmg/edit?gid=0#gid=0",
+      "_blank"
+    )
+  }
+  rel="noopener noreferrer"
+  className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+>
+  📊 Abstract and Registration List
+</button>
+
+</div>
+{/* End for PDF link for Abstract book */}
+
 </div>
       {/* 📌 MOBILE STICKY REGISTER BUTTON */}
       <div className="fixed bottom-0 left-0 w-full md:hidden bg-white shadow-lg p-3 z-50">
