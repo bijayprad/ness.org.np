@@ -170,7 +170,7 @@ const generalMembers = [
   { name: "Mr. Surendra Raj Nepal", email: "surendra.nepal@gmail.com", mobile: "9841323558", affiliation: "Amrit Campus, Lainchaur" },
   { name: "Prof. Dr. Tanka Raj Adhikari", email: "adhikaritanka123@gmail.com", mobile: "9856031107", affiliation: "PN Campus, Pokhara" },
   { name: "Dr. Thakur Prasad Wagle", email: "thakur.wagle@smc.tu.edu.np, tpwagle113@hotmail.com", mobile: "9841459030", affiliation: "Saraswati Multiple Campus, Thamel" },
-  { name: "Mr. Udaya Bohora", email: "udaya@gmail.com", mobile: "9841000000", affiliation: "Amrit Campus, Ghantaghar" },
+  { name: "Mr. Udaya Bahadur Bohara", email: "udaybohara2014@gmail.com", mobile: "9841414825", affiliation: "Amrit Campus, Ghantaghar" },
   { name: "Prof. Dr. Vikash Raj Satyal", email: "vrsatyal@gmail.com", mobile: "9841413453", affiliation: "Amrit Campus, Lainchaur (Retired)" },
   { name: "Prof. Yajna Prasad Timilsina", email: "yajna.timilsina@pc.tu.edu.np", mobile: "9856070234", affiliation: "Forestry Campus, Pokhara" },
   { name: "Mr. Yogesh Man Shrestha", email: "yogeshmans@yahoo.com", mobile: "9841432195", affiliation: "Trichandra Campus, Ghantaghar" },
