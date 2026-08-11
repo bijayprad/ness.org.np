@@ -225,7 +225,7 @@ export default function Conference() {
     <li>New Methodologies and Recent Progress</li>
     <li>GenAI: Opportunities and Challenges</li>
     <li>Statistical Approaches to Risk Management</li>
-    <li>Tasks of Gen AI and Big Data Challenges</li>
+    <li>Tasks of Gen AI and Big Data Challenges Chatbot</li>
   </ul>
 </div>
 
