@@ -270,8 +270,8 @@ export default function Conference() {
     </thead>
     <tbody>
       {[
-        ["Last date for abstract submission", "20 August, 2026"],
-        ["Acceptance Notification", "23 August, 2026"],
+        ["Last date for abstract submission", "20 August, (Extended to 29 August) 2026"],
+        ["Acceptance Notification", "23 August, (Extended to 31 August) 2026"],
         ["Conference Day", "20–21 September, 2026"],
       ].map(([event, date]) => (
         <tr key={event} className="block border rounded-lg mb-3 overflow-hidden odd:bg-white even:bg-gray-50 sm:table-row sm:mb-0 sm:rounded-none">
@@ -292,7 +292,10 @@ export default function Conference() {
         </tr>
       ))}
     </tbody>
+
   </table>
+      Due to number of requests, the last date for abstract submission has been extended to 29 August, 2026. 
+    The acceptance notification will be sent by 31 August, 2026.
 </div>
 
 {/* FEES */}
