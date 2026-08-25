@@ -225,7 +225,7 @@ export default function Conference() {
     <li>New Methodologies and Recent Progress</li>
     <li>GenAI: Opportunities and Challenges</li>
     <li>Statistical Approaches to Risk Management</li>
-    <li>Tasks of Gen AI and Big Data Challenges Chatbot</li>
+    <li>Tasks of Gen AI and Big Data Challenges</li>
   </ul>
 </div>
 
@@ -270,8 +270,8 @@ export default function Conference() {
     </thead>
     <tbody>
       {[
-        ["Last date for abstract submission", "20 August, 2026"],
-        ["Acceptance Notification", "23 August, 2026"],
+        ["Last date for abstract submission", "30 August, 2026"],
+        ["Acceptance Notification", "30 August, 2026"],
         ["Conference Day", "20–21 September, 2026"],
       ].map(([event, date]) => (
         <tr key={event} className="block border rounded-lg mb-3 overflow-hidden odd:bg-white even:bg-gray-50 sm:table-row sm:mb-0 sm:rounded-none">
