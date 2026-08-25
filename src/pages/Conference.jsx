@@ -215,19 +215,15 @@ export default function Conference() {
   </h3>
 
   <ul className="list-disc list-inside text-gray-700 leading-8 space-y-1">
-    <li>Statistics in the Context of Modern Data Science and AI</li>
-    <li>Advances from Statistical Learning to Machine Learning</li>
-    <li>Statistical Modeling of Environmental Risks</li>
-    <li>Applications in Climate Change and Sustainability</li>
-    <li>Innovations in Health Analytics</li>
-    <li>Computational Bayesian Methods and Emerging Trends</li>
-    <li>Public Health and Biostatistics</li>
-    <li>New Methodologies and Recent Progress</li>
-    <li>GenAI: Opportunities and Challenges</li>
-    <li>Statistical Approaches to Risk Management</li>
-    <li>Tasks of Gen AI and Big Data Challenges</li>
-  </ul>
-</div>
+  <li>Modern Statistics, Data Science, Artificial Intelligence &amp; Machine Learning</li>
+  <li>Statistical Theory, Methodology &amp; Emerging Statistical Methods</li>
+  <li>Bayesian Statistics, Statistical Learning &amp; Uncertainty Quantification</li>
+  <li>Biostatistics, Public Health &amp; Medical Statistics</li>
+  <li>Demography, Population Studies &amp; Social Statistics</li>
+  <li>Environmental Statistics, Climate Change, Agriculture &amp; Sustainability</li>
+  <li>Economic, Financial, Business &amp; Risk Analytics</li>
+  <li>Statistics for Governance, Policy &amp; Interdisciplinary Applications</li>
+</ul>
 
 {/* CONFERENCE OBJECTIVES */}
 <div className="mb-12">
