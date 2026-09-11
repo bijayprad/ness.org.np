@@ -214,19 +214,16 @@ export default function Conference() {
     Conference Focus Areas
   </h3>
 
-  <ul className="list-disc list-inside text-gray-700 leading-8 space-y-1">
-    <li>Statistics in the Context of Modern Data Science and AI</li>
-    <li>Advances from Statistical Learning to Machine Learning</li>
-    <li>Statistical Modeling of Environmental Risks</li>
-    <li>Applications in Climate Change and Sustainability</li>
-    <li>Innovations in Health Analytics</li>
-    <li>Computational Bayesian Methods and Emerging Trends</li>
-    <li>Public Health and Biostatistics</li>
-    <li>New Methodologies and Recent Progress</li>
-    <li>GenAI: Opportunities and Challenges</li>
-    <li>Statistical Approaches to Risk Management</li>
-    <li>Tasks of Gen AI and Big Data Challenges</li>
-  </ul>
+<ul className="list-disc list-inside text-gray-700 leading-8 space-y-1">
+  <li>Modern Statistics, Data Science, Artificial Intelligence &amp; Machine Learning</li>
+  <li>Statistical Theory, Methodology &amp; Emerging Statistical Methods</li>
+  <li>Bayesian Statistics, Statistical Learning &amp; Uncertainty Quantification</li>
+  <li>Biostatistics, Public Health &amp; Medical Statistics</li>
+  <li>Demography, Population Studies &amp; Social Statistics</li>
+  <li>Environmental Statistics, Climate Change, Agriculture &amp; Sustainability</li>
+  <li>Economic, Financial, Business &amp; Risk Analytics</li>
+  <li>Statistics for Governance, Policy &amp; Interdisciplinary Applications</li>
+</ul>
 </div>
 
 {/* CONFERENCE OBJECTIVES */}
@@ -248,7 +245,6 @@ export default function Conference() {
       Encourage Evidence-Based Policy and Decision-Making
     </li>
   </ul>
-  <br />
 </div>
 
 
@@ -270,7 +266,7 @@ export default function Conference() {
     </thead>
     <tbody>
       {[
-        ["Last date for abstract submission", "20 August, (Extended to 29 August) 2026"],
+        ["Last date for abstract submission", "20 August, 2026"],
         ["Acceptance Notification", "23 August, (Extended to 31 August) 2026"],
         ["Conference Day", "20–21 September, 2026"],
       ].map(([event, date]) => (
@@ -294,36 +290,186 @@ export default function Conference() {
     </tbody>
 
   </table>
-      Due to number of requests, the last date for abstract submission has been extended to 29 August, 2026. 
-    The acceptance notification will be sent by 31 August, 2026.
+
 </div>
 
 {/* FEES */}
+{/* FEES */}
 <div>
-  <h3 className="text-2xl font-bold text-blue-700 mb-4">Conference Fees</h3>
+  <h3 className="text-2xl font-bold text-blue-700 mb-4">
+    Conference Fees
+  </h3>
+
   <div className="overflow-x-auto">
     <table className="w-full border text-left text-sm">
+      
+      {/* TABLE HEADER */}
       <thead className="bg-blue-100 hidden sm:table-header-group">
         <tr>
-          <th className="p-3 border">Category</th>
-          <th className="p-3 border">Early Bird (upto 25<sup>th</sup> Aug, 2026)</th>
-          <th className="p-3 border">Regular (21<sup>st</sup> Aug – 19<sup>th</sup> Sep, 2026)</th>
-          <th className="p-3 border">Onsite</th>
+          <th className="p-3 border">
+            Category
+          </th>
+
+          {/* Early Bird - CLOSED */}
+          <th className="p-3 border bg-gray-200 text-gray-400">
+            <div className="blur-[2px]">
+              Early Bird (upto 20<sup>th</sup> Aug, 2026)
+            </div>
+            <span className="block text-xs text-red-500 font-bold mt-1">
+              CLOSED
+            </span>
+          </th>
+
+          <th className="p-3 border">
+            Regular (21<sup>st</sup> Aug – 19<sup>th</sup> Sep, 2026)
+          </th>
+
+          <th className="p-3 border">
+            Onsite
+          </th>
         </tr>
       </thead>
+
+      {/* TABLE BODY */}
       <tbody>
         {[
-          ["Nepali Students",              "NRS 2,000", "NRS 2,500", "NRS 3,000"],
-          ["Nepali Faculty / Researchers", "NRS 3,000", "NRS 3,500", "NRS 4,000"],
-          ["Nepali Institutional",         "NRS 10,000","NRS 12,000","NRS 15,000"],
-          ["South Asia Participants",      "US$ 80",    "US$ 100",   "US$ 125"],
-          ["Foreign Participants",         "US$ 200",   "US$ 225",   "US$ 250"],
+          [
+            "Nepali Students",
+            "NRS 2,000",
+            "NRS 2,500",
+            "NRS 3,000"
+          ],
+          [
+            "Nepali Faculty / Researchers",
+            "NRS 3,000",
+            "NRS 3,500",
+            "NRS 4,000"
+          ],
+          [
+            "Nepali Institutional",
+            "NRS 10,000",
+            "NRS 12,000",
+            "NRS 15,000"
+          ],
+          [
+            "South Asia Participants",
+            "US$ 80",
+            "US$ 100",
+            "US$ 125"
+          ],
+          [
+            "Foreign Participants",
+            "US$ 200",
+            "US$ 225",
+            "US$ 250"
+          ],
         ].map(([cat, early, regular, onsite]) => (
-          <tr key={cat} className="odd:bg-white even:bg-gray-50 block border rounded-lg mb-3 overflow-hidden sm:table-row sm:mb-0 sm:rounded-none">
-            <td data-label="Category"   className="p-3 border-b flex gap-2 font-medium sm:font-normal sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{cat}</td>
-            <td data-label="Early Bird" className="p-3 border-b flex gap-2 sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{early}</td>
-            <td data-label="Regular"    className="p-3 border-b flex gap-2 sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{regular}</td>
-            <td data-label="Onsite"     className="p-3 flex gap-2 sm:table-cell sm:border before:content-[attr(data-label)] before:text-slate-500 before:w-28 before:shrink-0 sm:before:hidden">{onsite}</td>
+          
+          <tr
+            key={cat}
+            className="
+              odd:bg-white
+              even:bg-gray-50
+              block
+              border
+              rounded-lg
+              mb-3
+              overflow-hidden
+              sm:table-row
+              sm:mb-0
+              sm:rounded-none
+            "
+          >
+
+            {/* CATEGORY */}
+            <td
+              data-label="Category"
+              className="
+                p-3
+                border-b
+                flex
+                gap-2
+                font-medium
+                sm:font-normal
+                sm:table-cell
+                sm:border
+                before:content-[attr(data-label)]
+                before:text-slate-500
+                before:w-28
+                before:shrink-0
+                sm:before:hidden
+              "
+            >
+              {cat}
+            </td>
+
+            {/* EARLY BIRD - CLOSED / BLURRED */}
+            <td
+              data-label="Early Bird"
+              className="
+                p-3
+                border-b
+                flex
+                gap-2
+                sm:table-cell
+                sm:border
+                bg-gray-100
+                text-gray-400
+                before:content-[attr(data-label)]
+                before:text-gray-400
+                before:w-28
+                before:shrink-0
+                sm:before:hidden
+              "
+            >
+              <span className="blur-[2px]">
+                {early}
+              </span>
+
+              <span className="ml-2 text-xs font-bold text-red-500 sm:hidden">
+                CLOSED
+              </span>
+            </td>
+
+            {/* REGULAR */}
+            <td
+              data-label="Regular"
+              className="
+                p-3
+                border-b
+                flex
+                gap-2
+                sm:table-cell
+                sm:border
+                before:content-[attr(data-label)]
+                before:text-slate-500
+                before:w-28
+                before:shrink-0
+                sm:before:hidden
+              "
+            >
+              {regular}
+            </td>
+
+            {/* ONSITE */}
+            <td
+              data-label="Onsite"
+              className="
+                p-3
+                flex
+                gap-2
+                sm:table-cell
+                sm:border
+                before:content-[attr(data-label)]
+                before:text-slate-500
+                before:w-28
+                before:shrink-0
+                sm:before:hidden
+              "
+            >
+              {onsite}
+            </td>
+
           </tr>
         ))}
       </tbody>
@@ -382,6 +528,28 @@ export default function Conference() {
         Visit Website
       </p>
     </a>
+
+    {/* Organization 4 */}
+<a
+  href="https://mitjnk.edu.np/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border rounded-xl p-5 shadow-sm hover:shadow-lg transition duration-300 bg-white flex flex-col items-center text-center"
+>
+  <img
+    src="https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/900956c3-68ab-456e-b201-a690178a0fd8.jpg"
+    alt="Nepal Statistical Society"
+    className="h-20 object-contain mb-4"
+  />
+
+  <h4 className="font-semibold text-lg text-gray-800">
+    Mithila Institute of Technology, MIT
+  </h4>
+
+  <p className="text-sm text-blue-600 mt-1">
+    Visit Website
+  </p>
+</a>
 
     {/* Organization 3 */}
     <a
