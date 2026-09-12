@@ -62,7 +62,28 @@ export default function Conference() {
 </motion.section>
 
       {/* MAIN */}
+      {/* 🔔 BLINKING ABSTRACT BOOK */}
+<div className="flex justify-center px-4 mt-5 mb-6">
+  <motion.a
+    href="https://docs.google.com/gview?embedded=1&url=https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/AbstractBook.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    animate={{
+      scale: [1, 1.05, 1],
+      opacity: [1, 0.75, 1]
+    }}
+    transition={{
+      duration: 1.2,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+    className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-3 rounded-full shadow-lg text-base md:text-lg"
+  >
+    📖 Abstract Book — View Now
+  </motion.a>
+</div>
      {/* BUTTONS */}
+
           <div className="flex flex-wrap justify-center gap-4 mb-10">
 <a href="https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/broness1.jpg"
     target="_blank"
