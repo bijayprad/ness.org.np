@@ -142,6 +142,21 @@ const partners = [
   },
 ];
 
+const supporters = [
+  {
+    name: "Nepal Telecom",
+    url: "https://www.ntc.net.np/",
+    image: "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/telecom.jpg",
+  },
+
+    {
+    name: "Saraswati Multiple Campus",
+    url: "https://smc.tu.edu.np/",
+    image: "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/saraswati.jpg",
+  },
+  
+];
+
 function Countdown() {
   // Nepal conference start time: 20 September 2026, 07:00 NPT (UTC+05:45).
   const targetDate = new Date("2026-09-20T07:00:00+05:45").getTime();
@@ -237,6 +252,7 @@ export default function Conference() {
     ["Dates", "dates"],
     ["Fees", "fees"],
     ["Partners", "partners"],
+    ["Supporters", "supporters"],
     ["Contact", "contact"],
   ];
 
@@ -842,6 +858,47 @@ export default function Conference() {
 
             <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {partners.map((partner) => (
+                <motion.a
+                  {...sectionMotion}
+                  key={partner.name}
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group rounded-2xl border border-slate-200 bg-white p-6 text-center hover:border-blue-300 hover:shadow-xl transition"
+                >
+                  <div className="h-24 flex items-center justify-center">
+                    <img
+                      src={partner.image}
+                      alt={partner.name}
+                      className="max-h-20 max-w-[150px] object-contain"
+                    />
+                  </div>
+                  <h3 className="mt-5 font-bold text-slate-800 leading-6">
+                    {partner.name}
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold text-blue-600 group-hover:underline">
+                    Visit Website →
+                  </p>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Supporters*/}
+        <section id="supporters" className="bg-white">
+          <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+            <motion.div {...sectionMotion} className="text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-600">
+                Supporting Organizations
+              </p>
+              <h2 className="mt-2 text-3xl md:text-4xl font-black text-slate-900">
+                Organizations
+              </h2>
+            </motion.div>
+
+            <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {supporters.map((partner) => (
                 <motion.a
                   {...sectionMotion}
                   key={partner.name}
