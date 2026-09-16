@@ -23,6 +23,7 @@ const ABSTRACT_BOOK_URL =
 const BROCHURE_URL =
   "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/broness1.jpg";
 const PPT_URL = "https://drive.google.com/drive/folders/1Apj4sxl6VW0fz-tlzxqgPYyFDcgLj4uu?usp=sharing";
+const Program_Details_URL = "https://docs.google.com/document/d/1_aUChS_1jJo-Bowu-pUH-sbQDtRcr_tZ0CaawJtdnOY/edit?usp=sharing";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -287,10 +288,18 @@ export default function Conference() {
                 </a>
               ))}
               <a
+                href={ABSTRACT_BOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-blue-600 px-3 py-2.5 text-sm font-bold text-white hover:bg-blue-700 transition"
+              >
+                Abstract Book
+              </a>
+                            <a
                 href={REGISTER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-blue-700 transition"
+                className="rounded-lg bg-blue-600 px-2.5 py-2.5 text-sm font-bold text-white hover:bg-blue-700 transition"
               >
                 Register Now
               </a>
@@ -411,6 +420,18 @@ export default function Conference() {
                 >
                   View Slides
                 </a>
+
+                                <span className="text-white/30">|</span>
+                <a
+                  href={Program_Details_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white underline underline-offset-4"
+                >
+                  Program Details
+                </a>
+
+                
               </div>
             </div>
           </motion.div>
