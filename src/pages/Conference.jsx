@@ -24,6 +24,7 @@ const BROCHURE_URL =
   "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/broness1.jpg";
 const PPT_URL = "https://drive.google.com/drive/folders/1Apj4sxl6VW0fz-tlzxqgPYyFDcgLj4uu?usp=sharing";
 const Program_Details_URL = "https://docs.google.com/document/d/1_aUChS_1jJo-Bowu-pUH-sbQDtRcr_tZ0CaawJtdnOY/edit?usp=sharing";
+const Poster_Details_URL = "https://docs.google.com/document/d/1-1AUJ449VZmHt_9ifqHZCdLLaBxloOfZkoagK9OekPg/edit?usp=sharing";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -421,7 +422,7 @@ export default function Conference() {
                   View Slides
                 </a>
 
-                                <span className="text-white/30">|</span>
+                <span className="text-white/30">|</span>
                 <a
                   href={Program_Details_URL}
                   target="_blank"
@@ -429,6 +430,16 @@ export default function Conference() {
                   className="text-white/80 hover:text-white underline underline-offset-4"
                 >
                   Program Details
+                </a>
+
+                <span className="text-white/30">|</span>
+                <a
+                  href={Poster_Details_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white underline underline-offset-4"
+                >
+                  Details for Poster Presentation
                 </a>
 
                 
