@@ -359,17 +359,74 @@ export default function Conference() {
             animate="visible"
             variants={fadeUp}
             transition={{ duration: 0.7 }}
-            className="relative max-w-7xl mx-auto px-4 py-16 md:py-24 lg:py-28"
+            className="relative max-w-7xl mx-auto px-4 pt-6 pb-16 md:pt-10 md:pb-20 lg:pt-12 lg:pb-24"
           >
-            <div className="max-w-5xl mx-auto text-center text-white">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs md:text-sm font-semibold backdrop-blur">
-                <span className="h-2 w-2 rounded-full bg-cyan-300" />
-                INTERNATIONAL CONFERENCE
-              </div>
+<div className="mt-2  max-w-5xl mx-auto text-center text-white">
 
-              <h1 className="mt-5 text-3xl md:text-6xl lg:text-6xl font-black tracking-tight leading-[1.05]">
-                Emerging Trends and Applications in Statistics and Data Science
-              </h1>
+  {/* TRANSPORTATION NOTICE */}
+  <div className="mb-6 mx-auto max-w-4xl rounded-xl border border-yellow-300/60 bg-yellow-400/15 px-5 py-4 backdrop-blur-md shadow-lg">
+    <div className="flex items-center justify-center gap-2">
+<span className="text-lg">📢</span>
+
+<span className="font-extrabold text-sm md:text-base">
+  <span className="text-red-400 animate-pulse">
+    TRANSPORTATION NOTICE
+  </span>
+
+  {" "}
+
+  <motion.span
+    className="inline-block text-lg"
+    animate={{ x: [0, 30, 0] }}
+    transition={{
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  >
+    🚐
+  </motion.span>
+
+  {" Pickup and Drop-off Service: Tinkune ↔ Dhulikhel"}
+</span>
+    </div>
+
+    <div className="mt-2 text-sm md:text-base font-semibold text-white leading-relaxed">
+      <p>
+        <span className=" mt-2 text-yellow-200 font-bold">Transportation Facilitators:</span>{" "}
+
+        Ishwori Prasad Banjade —{" "}
+        <a href="tel:9851040537" className="underline">9851040537</a>{" "}
+ 
+        Kishore Khanal —{" "}
+        <a href="tel:9841706412" className="underline">9841706412</a>
+      </p>
+
+      <p className="mt-3">
+        <span className="text-yellow-200 font-bold">
+          Transportation Service Provider from KU:
+        </span>
+        {" "}
+        Suman Thapa —{" "}
+        <a href="tel:9841386891" className="underline">9841386891</a>
+        {" & "}
+        <a href="tel:9851112849" className="underline">9851112849</a>
+      </p>
+    </div>
+  </div>
+
+  {/* CONFERENCE LABEL */}
+  <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs md:text-sm font-semibold backdrop-blur">
+    <span className="h-2 w-2 rounded-full bg-cyan-300" />
+    INTERNATIONAL CONFERENCE
+  </div>
+
+  {/* EXISTING TITLE */}
+  <h1 className="mt-5 text-3xl md:text-6xl lg:text-6xl font-black tracking-tight leading-[1.05]">
+    Emerging Trends and Applications in Statistics and Data Science
+  </h1>
+
+
 
               <p className="mt-5 text-xl md:text-2xl font-semibold text-cyan-100">
                 ICETASD 2026
