@@ -156,6 +156,12 @@ const supporters = [
     url: "https://smc.tu.edu.np/",
     image: "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/saraswati.jpg",
   },
+
+      {
+    name: "Asmita Publication",
+    url: "https://asmitapublication.com/",
+    image: "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/asmita1.png",
+  },
   
 ];
 
