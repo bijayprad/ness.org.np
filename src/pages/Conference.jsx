@@ -816,8 +816,8 @@ export default function Conference() {
                       </th>
                       <th className="p-4 font-bold bg-blue-700">
                         Regular
-                        <span className="block text-xs font-normal text-blue-100">
-                          21 Aug – 19 Sep
+                        <span className="block text-xs font-normal text-red-300">
+                          Closed
                         </span>
                       </th>
                       <th className="p-4 font-bold">Onsite</th>
@@ -835,7 +835,7 @@ export default function Conference() {
                         <td className="p-4 text-slate-400">
                           <span className="line-through">{early}</span>
                         </td>
-                        <td className="p-4 font-bold text-blue-700 bg-blue-50/50">
+                        <td className="line-through">
                           {regular}
                         </td>
                         <td className="p-4 font-semibold">{onsite}</td>
