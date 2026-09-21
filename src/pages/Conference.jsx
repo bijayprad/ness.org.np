@@ -25,6 +25,19 @@ const BROCHURE_URL =
 const PPT_URL = "https://drive.google.com/drive/folders/1Apj4sxl6VW0fz-tlzxqgPYyFDcgLj4uu?usp=sharing";
 const Program_Details_URL = "https://docs.google.com/document/d/1_aUChS_1jJo-Bowu-pUH-sbQDtRcr_tZ0CaawJtdnOY/edit?usp=sharing";
 const Poster_Details_URL = "https://docs.google.com/document/d/1-1AUJ449VZmHt_9ifqHZCdLLaBxloOfZkoagK9OekPg/edit?usp=sharing";
+const conferencePhotos = [
+  "1.jpg",
+  "2.jpg",
+  "3.jpeg",
+  "4.jpeg",
+  "5.jpeg",
+  "6.jpeg",
+  "7.jpeg",
+  "8.jpeg",
+];
+
+const photoBaseURL =
+  "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/conf2026/";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -165,6 +178,7 @@ const supporters = [
   
 ];
 
+
 function Countdown() {
   // Nepal conference start time: 20 September 2026, 07:00 NPT (UTC+05:45).
   const targetDate = new Date("2026-09-20T07:00:00+05:45").getTime();
@@ -253,6 +267,44 @@ function Button({ href, children, variant = "primary", external = true }) {
 
 export default function Conference() {
   const [mobileMenu, setMobileMenu] = useState(false);
+
+    const [selectedPhoto, setSelectedPhoto] = useState(null);
+
+  const nextPhoto = () => {
+    setSelectedPhoto((prev) =>
+      prev === conferencePhotos.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const previousPhoto = () => {
+    setSelectedPhoto((prev) =>
+      prev === 0 ? conferencePhotos.length - 1 : prev - 1
+    );
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (selectedPhoto === null) return;
+
+      if (event.key === "ArrowRight") {
+        nextPhoto();
+      }
+
+      if (event.key === "ArrowLeft") {
+        previousPhoto();
+      }
+
+      if (event.key === "Escape") {
+        setSelectedPhoto(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedPhoto]);
 
   const navItems = [
     ["About", "about"],
@@ -348,78 +400,28 @@ export default function Conference() {
         </div>
       </header>
 
-      {/* HERO */}
-      <main id="top">
-        <section
-          className="relative overflow-hidden bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://i.imgur.com/YvAttk4.jpeg')",
-          }}
-        >
-          <div className="absolute inset-0 bg-blue-950/70" />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/80 via-blue-900/55 to-cyan-950/50" />
-
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            transition={{ duration: 0.7 }}
-            className="relative max-w-7xl mx-auto px-4 pt-6 pb-16 md:pt-10 md:pb-20 lg:pt-12 lg:pb-24"
-          >
-<div className="mt-2  max-w-5xl mx-auto text-center text-white">
-
-  {/* TRANSPORTATION NOTICE */}
-  <div className="mb-6 mx-auto max-w-4xl rounded-xl border border-yellow-300/60 bg-yellow-400/15 px-5 py-4 backdrop-blur-md shadow-lg">
-    <div className="flex items-center justify-center gap-2">
-<span className="text-lg">📢</span>
-
-<span className="font-extrabold text-sm md:text-base">
-  <span className="text-red-400 animate-pulse">
-    TRANSPORTATION NOTICE
-  </span>
-
-  {" "}
-
-  <motion.span
-    className="inline-block text-lg"
-    animate={{ x: [0, 30, 0] }}
-    transition={{
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut",
+ {/* HERO */}
+<main id="top">
+  <section
+    className="relative overflow-hidden bg-cover bg-center min-h-[500px]"
+    style={{
+      backgroundImage:
+        "url(https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/bijayku5.jpeg)",
     }}
   >
-    🚐
-  </motion.span>
 
-  {" Pickup and Drop-off Service: Tinkune ↔ Dhulikhel"}
-</span>
-    </div>
+    {/* Dark overlay - keep this AFTER confirming image works */}
+    <div className="absolute inset-0 bg-blue-950/50" />
 
-    <div className="mt-2 text-sm md:text-base font-semibold text-white leading-relaxed">
-      <p>
-        <span className=" mt-2 text-yellow-200 font-bold">Transportation Facilitators:</span>{" "}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={fadeUp}
+      transition={{ duration: 0.7 }}
+      className="relative max-w-7xl mx-auto px-4 pt-6 pb-16 md:pt-10 md:pb-20 lg:pt-12 lg:pb-24"
+    >
+      <div className="mt-2 max-w-5xl mx-auto text-center text-white">
 
-        Ishwori Prasad Banjade —{" "}
-        <a href="tel:9851040537" className="underline">9851040537</a>{" "}
- 
-        Kishore Khanal —{" "}
-        <a href="tel:9841706412" className="underline">9841706412</a>
-      </p>
-
-      <p className="mt-3">
-        <span className="text-yellow-200 font-bold">
-          Transportation Service Provider from KU:
-        </span>
-        {" "}
-        Suman Thapa —{" "}
-        <a href="tel:9841386891" className="underline">9841386891</a>
-        {" & "}
-        <a href="tel:9851112849" className="underline">9851112849</a>
-      </p>
-    </div>
-  </div>
 
   {/* CONFERENCE LABEL */}
   <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs md:text-sm font-semibold backdrop-blur">
@@ -510,6 +512,405 @@ export default function Conference() {
             </div>
           </motion.div>
         </section>
+
+{/* Added for the success of the program */}
+{/* CONFERENCE SUCCESS */}
+<motion.section
+  {...sectionMotion}
+  className="bg-white border-b border-slate-200"
+>
+  <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+
+    {/* Section Heading */}
+    <div className="text-center max-w-4xl mx-auto">
+      <h2 className="mt-3 text-3xl md:text-5xl text-blue-600">
+        ICETASD 2026 — Conference Highlights
+      </h2>
+
+
+
+      <p className="mt-5 text-base md:text-lg leading-8 text-slate-600">
+        The International Conference on Emerging Trends and Applications
+        in Statistics and Data Science (ICETASD-2026) was successfully
+        concluded on <strong>20–21 September 2026</strong> at Kathmandu
+        University, Dhulikhel, Nepal.
+      </p>
+    </div>
+
+    {/* Conference Statistics */}
+    <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
+      <motion.div
+        {...sectionMotion}
+        className="rounded-2xl bg-blue-50 border border-blue-100 p-6 text-center"
+      >
+        <div className="text-4xl md:text-5xl font-black text-blue-700">
+          150+
+        </div>
+        <p className="mt-2 text-sm md:text-base font-semibold text-slate-700">
+          Participants
+        </p>
+        <p className="mt-1 text-xs text-slate-500">
+          From Nepal and abroad
+        </p>
+      </motion.div>
+
+      <motion.div
+        {...sectionMotion}
+        className="rounded-2xl bg-cyan-50 border border-cyan-100 p-6 text-center"
+      >
+        <div className="text-4xl md:text-5xl font-black text-cyan-700">
+          74
+        </div>
+        <p className="mt-2 text-sm md:text-base font-semibold text-slate-700">
+          Technical Papers
+        </p>
+        <p className="mt-1 text-xs text-slate-500">
+          Research presentations
+        </p>
+      </motion.div>
+
+      <motion.div
+        {...sectionMotion}
+        className="rounded-2xl bg-indigo-50 border border-indigo-100 p-6 text-center"
+      >
+        <div className="text-4xl md:text-5xl font-black text-indigo-700">
+          4
+        </div>
+        <p className="mt-2 text-sm md:text-base font-semibold text-slate-700">
+          Keynote Presentations
+        </p>
+        <p className="mt-1 text-xs text-slate-500">
+          Distinguished speakers
+        </p>
+      </motion.div>
+
+      <motion.div
+        {...sectionMotion}
+        className="rounded-2xl bg-slate-50 border border-slate-200 p-6 text-center"
+      >
+        <div className="text-4xl md:text-5xl font-black text-slate-800">
+          3
+        </div>
+        <p className="mt-2 text-sm md:text-base font-semibold text-slate-700">
+          Invited Presentations
+        </p>
+        <p className="mt-1 text-xs text-slate-500">
+          Expert perspectives
+        </p>
+      </motion.div>
+
+    </div>
+
+    {/* Main Success Message */}
+    <div className="mt-12 grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-stretch">
+
+      {/* Message */}
+      <motion.div
+        {...sectionMotion}
+        className="rounded-3xl bg-slate-50 border border-slate-200 p-7 md:p-10"
+      >
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-600">
+          A Successful Academic Gathering
+        </p>
+
+        <h3 className="mt-3 text-2xl md:text-3xl font-black text-slate-900">
+          Bringing researchers, academicians and professionals together
+        </h3>
+
+        <div className="mt-6 space-y-4 text-slate-600 leading-7">
+
+          <p>
+            ICETASD-2026 provided a vibrant platform for academic exchange,
+            research collaboration and knowledge sharing among statisticians,
+            data scientists, researchers, academicians, professionals and
+            students.
+          </p>
+
+          <p>
+            The conference featured research and discussions covering
+            <strong> Statistics, Data Science, Artificial Intelligence,
+            Machine Learning, Biostatistics, Official Statistics,
+            Actuarial Science</strong> and other emerging areas of
+            quantitative research and applications.
+          </p>
+
+          <p>
+            The enthusiastic participation and diverse research contributions
+            demonstrated the growing interest and expanding scope of
+            Statistics and Data Science in Nepal and beyond.
+          </p>
+
+        </div>
+      </motion.div>
+
+      {/* Highlight Card */}
+      <motion.div
+        {...sectionMotion}
+        className="rounded-3xl bg-gradient-to-br from-blue-700 via-blue-800 to-slate-900 p-7 md:p-10 text-white"
+      >
+
+        <div className="text-5xl">🌏</div>
+
+        <p className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">
+          Knowledge • Collaboration • Innovation
+        </p>
+
+        <h3 className="mt-3 text-2xl md:text-3xl font-black">
+          Connecting ideas across disciplines
+        </h3>
+
+        <p className="mt-5 text-blue-100 leading-7">
+          The conference created opportunities for researchers and
+          professionals to exchange ideas, explore emerging methodologies,
+          discuss real-world applications and develop new possibilities for
+          academic and professional collaboration.
+        </p>
+
+        <div className="mt-7 flex flex-wrap gap-2">
+          <span className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold">
+            Statistics
+          </span>
+
+          <span className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold">
+            Data Science
+          </span>
+
+          <span className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold">
+            AI & ML
+          </span>
+
+          <span className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold">
+            Research
+          </span>
+
+          <span className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold">
+            Collaboration
+          </span>
+        </div>
+
+      </motion.div>
+
+    </div>
+
+    {/* Journal Release */}
+    <motion.div
+      {...sectionMotion}
+      className="mt-10 rounded-3xl border border-blue-100 bg-blue-50 p-7 md:p-10"
+    >
+
+      <div className="grid md:grid-cols-[auto_1fr] gap-6 items-center">
+
+<div className="flex h-60 w-40 shrink-0 items-center justify-center rounded-2xl bg-blue-700 overflow-hidden">
+  <img
+    src="https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/Photo/conf2026/njsd%20front.jpg"
+    alt="NJSD Front Cover"
+    className="h-full w-full object-cover"
+  />
+</div>
+
+        <div>
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-600">
+            A Special Milestone
+          </p>
+
+          <h3 className="mt-2 text-2xl md:text-3xl font-black text-slate-900">
+            First Issue of the Nepal Journal of Statistics and Data Sciences
+          </h3>
+
+          <p className="mt-4 text-slate-600 leading-6">
+            Another significant achievement of ICETASD-2026 was the release
+            of the <strong>first issue of the Nepal Journal of Statistics and
+            Data Sciences (NJSD)</strong>. The inaugural issue was formally
+            released in both <strong>online and physical formats</strong> during the conference.
+          </p>
+
+          <p className="mt-3 text-slate-600 leading-7">
+            The journal represents an important step toward providing a
+            dedicated scholarly platform for research in Statistics, Data
+            Science and related quantitative disciplines.
+          </p>
+
+          <div className="mt-5">
+            <a
+              href="https://journal.ness.org.np/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-blue-700 px-5 py-3 font-bold text-white hover:bg-blue-800 transition"
+            >
+              Visit NJSD Journal →
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </motion.div>
+
+    {/* Closing Message */}
+    <motion.div
+      {...sectionMotion}
+      className="mt-10 text-center max-w-4xl mx-auto"
+    >
+      <p className="text-lg md:text-xl font-semibold leading-8 text-slate-700">
+        ICETASD-2026 marks an important step in strengthening academic
+        exchange, research collaboration and the advancement of Statistics
+        and Data Science in Nepal.
+      </p>
+
+      <p className="mt-4 text-slate-500">
+        The organizing team sincerely thanks all keynote speakers, invited
+        speakers, presenters, participants, reviewers, volunteers,
+        collaborating institutions and supporters for contributing to the
+        success of the conference.
+      </p>
+    </motion.div>
+
+  </div>
+</motion.section>
+
+{/* End of the success of the program */}
+
+{/* PHOTO ALBUM */}
+{/* PHOTO ALBUM */}
+
+<section
+  id="photos"
+  className="bg-slate-50 border-b border-slate-200"
+>
+  <div className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+
+    <motion.div
+      {...sectionMotion}
+      className="text-center max-w-3xl mx-auto"
+    >
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-600">
+        ICETASD 2026
+      </p>
+
+      <h2 className="mt-2 text-3xl md:text-4xl font-black text-slate-900">
+        📸 Conference Photo Album
+      </h2>
+
+
+    </motion.div>
+
+    {/* PHOTO GRID */}
+
+    <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+      {conferencePhotos.map((photo, index) => (
+        <motion.button
+          key={photo}
+          {...sectionMotion}
+          type="button"
+          onClick={() => setSelectedPhoto(index)}
+          className="group relative overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 focus:outline-none"
+        >
+
+          <img
+            src={`${photoBaseURL}${photo}`}
+            alt={`ICETASD-2026 Conference Photo ${index + 1}`}
+            className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-slate-900">
+              🔍 View Photo
+            </span>
+
+          </div>
+
+        </motion.button>
+      ))}
+
+    </div>
+
+    <p className="mt-6 text-center text-sm text-slate-500">
+      Click any photograph to view it in full size.
+    </p>
+
+  </div>
+</section>
+
+
+{/* FULL-SCREEN PHOTO VIEWER */}
+
+{selectedPhoto !== null && (
+  <div
+    className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center p-4"
+    onClick={() => setSelectedPhoto(null)}
+  >
+
+    {/* CLOSE */}
+
+    <button
+      type="button"
+      onClick={() => setSelectedPhoto(null)}
+      className="absolute top-5 right-5 z-50 h-11 w-11 rounded-full bg-white/10 text-white text-3xl hover:bg-white/20 transition"
+      aria-label="Close photo viewer"
+    >
+      ×
+    </button>
+
+    {/* PREVIOUS */}
+
+    <button
+      type="button"
+      onClick={(event) => {
+        event.stopPropagation();
+        previousPhoto();
+      }}
+      className="absolute left-3 md:left-8 z-50 h-12 w-12 md:h-14 md:w-14 rounded-full bg-white/10 text-white text-4xl hover:bg-white/20 transition"
+      aria-label="Previous photo"
+    >
+      ‹
+    </button>
+
+    {/* IMAGE */}
+
+    <div
+      className="relative max-w-6xl w-full flex items-center justify-center"
+      onClick={(event) => event.stopPropagation()}
+    >
+
+      <img
+        src={`${photoBaseURL}${conferencePhotos[selectedPhoto]}`}
+        alt={`ICETASD-2026 Conference Photo ${selectedPhoto + 1}`}
+        className="max-w-full max-h-[82vh] object-contain rounded-lg shadow-2xl"
+      />
+
+      {/* PHOTO NUMBER */}
+
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-black/60 px-4 py-2 text-sm font-semibold text-white">
+        {selectedPhoto + 1} / {conferencePhotos.length}
+      </div>
+
+    </div>
+
+    {/* NEXT */}
+
+    <button
+      type="button"
+      onClick={(event) => {
+        event.stopPropagation();
+        nextPhoto();
+      }}
+      className="absolute right-3 md:right-8 z-50 h-12 w-12 md:h-14 md:w-14 rounded-full bg-white/10 text-white text-4xl hover:bg-white/20 transition"
+      aria-label="Next photo"
+    >
+      ›
+    </button>
+
+  </div>
+)}
+
+{/* End of Photo Album */}
+
+{/* End of Photo Album */}
+
 
         <Countdown />
 
