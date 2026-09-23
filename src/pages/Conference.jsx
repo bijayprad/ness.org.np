@@ -23,7 +23,7 @@ const ABSTRACT_BOOK_URL =
 const BROCHURE_URL =
   "https://raw.githubusercontent.com/bijayprad/Research-Publication/main/NeSS/broness1.jpg";
 const PPT_URL = "https://drive.google.com/drive/folders/1Apj4sxl6VW0fz-tlzxqgPYyFDcgLj4uu?usp=sharing";
-const Program_Details_URL = "https://docs.google.com/document/d/1_aUChS_1jJo-Bowu-pUH-sbQDtRcr_tZ0CaawJtdnOY/edit?usp=sharing";
+const Program_Details_URL = "https://forms.gle/UUdpvKJThCdaBTQW6";
 const Poster_Details_URL = "https://docs.google.com/document/d/1-1AUJ449VZmHt_9ifqHZCdLLaBxloOfZkoagK9OekPg/edit?usp=sharing";
 const conferencePhotos = [
   "1.jpg",
@@ -494,7 +494,7 @@ export default function Conference() {
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-white underline underline-offset-4"
                 >
-                  Program Details
+                  Request form for Certificate
                 </a>
 
                 <span className="text-white/30">|</span>
