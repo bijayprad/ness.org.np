@@ -494,7 +494,7 @@ export default function Conference() {
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-white underline underline-offset-4"
                 >
-                  Request form for Certificate
+                  Request for participants Certificate
                 </a>
 
                 <span className="text-white/30">|</span>
