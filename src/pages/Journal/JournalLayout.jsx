@@ -3,7 +3,7 @@ import { Outlet, NavLink } from "react-router-dom";
 export default function JournalLayout() {
   return (
     <div className="max-w-6xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Nepal Journal of Statistics and Data Sciences (NJSDS)</h1>
+      <h1 className="text-3xl font-bold mb-6">Nepal Journal of Statistics and Data Sciences (NJSD)</h1>
 
       <nav className="mb-6 flex gap-4">
         <NavLink

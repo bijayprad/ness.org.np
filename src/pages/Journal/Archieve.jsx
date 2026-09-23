@@ -8,6 +8,7 @@ export default function Archieve() {
         valuable insights and knowledge across statistics and data sciences.
     </p>
       
+
       <ul className="list-disc ml-6">
         {/* Making not visible  
         <li>Volume 3, Issue 2 – December 2025</li>
@@ -15,10 +16,21 @@ export default function Archieve() {
         <li>Volume 2, Issue 2 – December 2024</li>
         <li>Volume 2, Issue 1 – June 2024</li>
         <li>Volume 1, Issue 2 – December 2023</li>
-        <li>Volume 1, Issue 1 – June 2023</li>
         */}
+    
+<li>
+  <a
+    href="https://journal.ness.org.np/index.php/njsds/issue/view/1"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-600 hover:text-blue-800 hover:underline"
+  >
+    Volume 1, Issue 1 – September, 2026
+  </a>
+</li>
+        
         <ul className="list-disc ml-6">
-  <li>
+
     <a
       href="#"
       target="_blank"
@@ -27,13 +39,12 @@ export default function Archieve() {
     >
       {/* Making not visible Volume 1, Issue 1 */}
     </a>
-  </li>
   
 </ul>
 
       </ul>
       <p className="mt-4">
-        More archives will be added as new issues are published.
+     
       </p>
     </div>
   );
